@@ -18,7 +18,7 @@ const getEvents = async () => {
 };
 
 async function EventCard() {
-    const { events } = await getEvents();
+    const events = await getEvents();
     return (
         <>
             {events?.map((event: any) => (
