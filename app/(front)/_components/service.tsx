@@ -1,0 +1,81 @@
+import React from "react";
+import { MdOutlineSecurity, MdNetworkCheck } from "react-icons/md";
+import { FaCloudDownloadAlt } from "react-icons/fa";
+import { CgSoftwareDownload } from "react-icons/cg";
+import { FcSalesPerformance } from "react-icons/fc";
+
+import { Button } from "@/components/ui/button";
+import LinkButton from "@/components/linkButton";
+
+
+export function ServiceCard({ icon, name, description, link }: any) {
+    return (
+        <div className=" flex flex-col items-center  w-96 h-96 border-2 border-blue-900 rounded-lg">
+            <div className="py-6 pt-2 text-red-800">{icon}</div>
+            <h1 className="text-red-700 font-semibold text-center text-xl">{name}</h1>
+            <p className="px-4 text-gray-700 py-2">{description}</p>
+            <LinkButton link={link} name={'Explore'} />
+        </div>
+    );
+}
+
+
+function Service() {
+    return (
+        <div className="bg-scroll bg-gradient-to-r from-gray-100 bg-opacity h-full text-gray-700 py-6">
+            <div className="flex flex-col items-center justify-center">
+                <h1 className="text-center   uppercase text-xl font-semibold md:text-2xl py-4">
+                    Our Services
+                </h1>
+                <h2 className="text-3xl md:text-4xl text-blue-800 font-bold w-96 md:w-[500px] py-6 text-center">
+                    Bringing Technology from the horizon
+                </h2>
+                <p className="text-center text-gray-700 w-96 md:w-[600px]">
+                    Delivering unmatched service is what we live for. We create a culture
+                    of care and service where our customer comes first. .
+                </p>
+                <div className="flex flex-wrap gap-6 m-10 mx-14">
+                    <ServiceCard
+                        icon={<FaCloudDownloadAlt size={"2.5rem"} color="red" />}
+                        name={"Cloud Computing"}
+                        description={
+                            "Cloud technology can centralize the data capture, storage, and interpretation processes. It can also reduce the costs associated with these critical processes and generate far richer, more precise, faster data-led insights, which banks can use to drive performance. "
+                        }
+                        link='/services/cloud-computing'
+                    />
+                    <ServiceCard
+                        icon={<MdNetworkCheck size={"2.5rem"} color="red" />}
+                        name={"Networking"}
+                        description={
+                            "Computer networking enables employees to share ideas more easily and work more efficiently. "
+                        }
+                        link='/services/networks'
+                    />
+                    <ServiceCard
+                        icon={<CgSoftwareDownload size={"2.5rem"} color="red" />}
+                        name={"Software Development"}
+                        description={
+                            "We offer solutions ranging in the given scope ( ARTIFICIAL INTELLIGENCE, DATA SCIENCE SOLUTIONS, API INTEGRATION, WEB & MOBILE SOLUTIONS, CHATBOTS, PIPELINE DEVELOPMENT). Use of the software is important for automation of the organisations tasks as well as reporting the progress or lags in the organisations activities."
+                        }
+                        link='/services/software'
+                    />
+                    <ServiceCard
+                        icon={<MdOutlineSecurity size={"2.5rem"} color="red" />}
+                        name={"Cyber Security"}
+                        description={
+                            "Cyber security solutions are technological tools and services that help protect organizations against cyber attacks, which can result in application downtime, theft of sensitive data, damage to reputation, compliance fines, and other adverse consequences."
+                        }
+                        link='/services/cyber-security'
+                    />
+                    <ServiceCard
+                        icon={<FcSalesPerformance size={"2.5rem"} color="red" />}
+                        name={"Sales"}
+                        link='sales'
+                    />
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default Service;
