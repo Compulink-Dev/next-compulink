@@ -21,7 +21,7 @@ async function Event() {
     const { events } = await getEvents();
     return (
         <>
-            {events.slice(0, 1).map((events: any, index: any) => (
+            {events?.slice(0, 1).map((events: any, index: any) => (
                 <div
                     key={index}
                     className="bg-slate-50 -translate-y-20">
