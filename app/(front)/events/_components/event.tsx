@@ -5,7 +5,7 @@ import LinkButton from "@/components/linkButton";
 
 const getEvents = async () => {
     try {
-        const res = await fetch("/api/events", {
+        const res = await fetch(`${process.env.API_ROUTE}/api/events`, {
             cache: "no-store",
         });
         if (!res.ok) {

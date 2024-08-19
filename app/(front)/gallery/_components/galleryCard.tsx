@@ -3,20 +3,24 @@ import Image from "next/image";
 
 const getGalleries = async () => {
     try {
-        const res = await fetch(" /api/gallery", {
+        const res = await fetch(`${process.env.API_ROUTE}/api/gallery`, {
             cache: "no-store",
         });
         if (!res.ok) {
-            throw new Error("Failed to fetch from gallery");
+            throw new Error("Failed to fetch gallery");
         }
         return res.json();
+
     } catch (error) {
         console.log(error);
     }
 };
 
 async function GalleryCard() {
-    const { gallery = [] } = await getGalleries() || {};
+    const { gallery } = await getGalleries();
+
+    console.log("Gallery :", gallery);
+
 
     return (
         <>
@@ -31,7 +35,7 @@ async function GalleryCard() {
                         height={400}
                         width={500}
                         alt=""
-                        className="w-96 h-56 object-cover"
+                        className="w-96 h-56 object-contain"
                     />
                     <div className="p-2 ">
                         <h1 className=" uppercase text-sm  font-semibold">

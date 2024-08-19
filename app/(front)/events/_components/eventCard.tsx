@@ -5,7 +5,7 @@ import LinkButton from "@/components/linkButton";
 
 const getEvents = async () => {
     try {
-        const res = await fetch("/api/events", {
+        const res = await fetch(`${process.env.API_ROUTE}/api/events`, {
             cache: "no-store",
         });
         if (!res.ok) {
@@ -18,7 +18,7 @@ const getEvents = async () => {
 };
 
 async function EventCard() {
-    const { events = [] } = await getEvents() || {};
+    const { events } = await getEvents();
     return (
         <>
             {events.map((event: any) => (
@@ -31,7 +31,7 @@ async function EventCard() {
                         height={400}
                         width={300}
                         alt=""
-                        className="h-72 w-72 rounded object-cover mx-3 my-10"
+                        className="h-72 w-72 rounded object-contain mx-3 my-10"
                     />
                     <div className="flex-col items-center justify-center p-8 ">
                         <h1 className="text-lg font-semibold pb-8">{event.title}</h1>
@@ -43,7 +43,7 @@ async function EventCard() {
                             <p className="px-2 py-1 rounded  bg-blue-900">{event.date}</p>
                         </div>
                         <div className="w-28 py-4">
-                            <LinkButton name={"Read more"} link={"/www.evolvesummit.com"} />
+                            <LinkButton name={"Read more"} link={"https://www.evolveictsummit.com/"} />
                         </div>
                     </div>
                 </div>
