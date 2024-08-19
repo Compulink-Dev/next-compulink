@@ -47,7 +47,7 @@ function Service() {
                         icon={<MdNetworkCheck size={"2.5rem"} color="red" />}
                         name={"Networking"}
                         description={
-                            "Computer networking enables employees to share ideas more easily and work more efficiently. "
+                            "Networking, also known as computer networking, is the practice of transporting and exchanging data between nodes over a shared medium in an information system. Networking comprises not only the design, construction and use of a network, but also the management, maintenance and operation of the network infrastructure, software and policies."
                         }
                         link='/services/networks'
                     />
@@ -70,6 +70,9 @@ function Service() {
                     <ServiceCard
                         icon={<FcSalesPerformance size={"2.5rem"} color="red" />}
                         name={"Sales"}
+                        description={
+                            "Sales is a term used to describe the activities that lead to the selling of goods or services. Businesses have sales organizations that are broken up into different teams. And these sales teams are often determined based on the region they're selling to, the product or service they're selling, and the target customer."
+                        }
                         link='sales'
                     />
                 </div>
