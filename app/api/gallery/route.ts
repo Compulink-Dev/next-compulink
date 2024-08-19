@@ -14,3 +14,10 @@ export async function GET() {
     const gallery = await Gallery.find();
     return NextResponse.json({ gallery });
 }
+
+export async function DELETE(req: NextRequest) {
+    const id = req.nextUrl.searchParams.get("id")
+    await dbConnect()
+    await Gallery.findByIdAndDelete(id)
+    return NextResponse.json({ message: "Gallery Deleted" }, { status: 201 })
+}
