@@ -5,10 +5,12 @@ const getGalleries = async () => {
     try {
         const res = await fetch(`${process.env.API_ROUTE}/api/gallery`, {
         });
+        const data = await res.json()
+        console.log("Gallery :", data);
         if (!res.ok) {
             throw new Error("Failed to fetch gallery");
         }
-        return res.json();
+        return data;
 
     } catch (error) {
         console.log(error);

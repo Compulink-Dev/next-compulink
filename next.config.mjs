@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // output: "export",
     images: {
         remotePatterns: [
             {
@@ -20,6 +19,7 @@ const nextConfig = {
                 hostname: "flowbite.s3.amazonaws.com"
             }
         ],
+        unoptimized: true
     },
 };
 

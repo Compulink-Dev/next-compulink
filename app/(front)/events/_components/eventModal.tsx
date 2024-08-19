@@ -11,17 +11,17 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-export function DialogDemo() {
+export function EventModal() {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button variant="outline">Read More</Button>
+                <Button variant="outline">Register</Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
-                    <DialogTitle>Edit profile</DialogTitle>
+                    <DialogTitle>Register for a seat</DialogTitle>
                     <DialogDescription>
-                        {"Make changes to your profile here. Click save when you're done."}
+                        {"Register earlier to get a booking"}
                     </DialogDescription>
                 </DialogHeader>
                 <div className="grid gap-4 py-4">
@@ -31,23 +31,34 @@ export function DialogDemo() {
                         </Label>
                         <Input
                             id="name"
-                            defaultValue="Pedro Duarte"
+                            defaultValue="Lloyd Matare"
                             className="col-span-3"
                         />
                     </div>
                     <div className="grid grid-cols-4 items-center gap-4">
-                        <Label htmlFor="username" className="text-right">
-                            Username
+                        <Label htmlFor="email" className="text-right">
+                            Email
                         </Label>
                         <Input
-                            id="username"
-                            defaultValue="@peduarte"
+                            id="email"
+                            defaultValue="example@gmail.com"
                             className="col-span-3"
                         />
                     </div>
+                    <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="Contact" className="text-right">
+                            Contact
+                        </Label>
+                        <Input
+                            id="Contact"
+                            defaultValue="+263778191278"
+                            className="col-span-3"
+                        />
+                    </div>
+
                 </div>
                 <DialogFooter>
-                    <Button type="submit">Save changes</Button>
+                    <Button type="submit">Register event</Button>
                 </DialogFooter>
             </DialogContent>
         </Dialog>

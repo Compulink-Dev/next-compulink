@@ -2,15 +2,20 @@ import React from "react";
 import Image from "next/image";
 import FillButton from "../../../../components/fillButton";
 import LinkButton from "@/components/linkButton";
+import { EventModal } from "./eventModal";
+import { Locate, Timer } from "lucide-react";
 
 const getEvents = async () => {
     try {
         const res = await fetch(`${process.env.API_ROUTE}/api/events`, {
         });
+        const data = await res.json()
+        console.log("Events :", data);
+
         if (!res.ok) {
             throw new Error("Failed to fetch topics");
         }
-        return res.json();
+        return data;
     } catch (error) {
         console.log(error);
     }
@@ -55,12 +60,26 @@ async function Event() {
                             </h1>
                             <h2 className="text-center text-gray-400 ">General</h2>
 
-                            <div className="flex items-center justify-center p-4 gap-4 ">
-                                <LinkButton name="27 Oct 2022" link="/" />
-                                <LinkButton name="Register" link="/" />
-                                <p className="px-4 py-2 bg-red-600 text-white rounded-md">
-                                    {events.venue}
-                                </p>
+                            <div className="flex flex-col gap-2 items-center justify-center">
+                                <div className="flex flex-col items-center justify-center p-4 gap-4 ">
+                                    <div className="flex items-center gap-2">
+                                        <Locate className="text-sm text-slate-400" />
+                                        <p className="">
+                                            {events.venue}
+                                        </p>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <Timer className="text-sm text-slate-400" />
+                                        <p className="">
+                                            {events.date}
+                                        </p>
+                                    </div>
+                                    <div className="flex items-center gap-4">
+                                        <EventModal />
+                                        <LinkButton name="View more" link="/" />
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>

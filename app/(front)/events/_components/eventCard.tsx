@@ -7,10 +7,12 @@ const getEvents = async () => {
     try {
         const res = await fetch(`${process.env.API_ROUTE}/api/events`, {
         });
+        const data = await res.json()
+        console.log("Events :", data);
         if (!res.ok) {
             throw new Error("Failed to fetch events");
         }
-        return res.json();
+        return data;
     } catch (error) {
         console.log(error);
     }
