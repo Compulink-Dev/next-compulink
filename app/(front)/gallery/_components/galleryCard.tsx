@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const getGalleries = async () => {
     try {
-        const res = await fetch(" http://localhost:3000/api/gallery", {
+        const res = await fetch(" /api/gallery", {
             cache: "no-store",
         });
         if (!res.ok) {
@@ -16,7 +16,7 @@ const getGalleries = async () => {
 };
 
 async function GalleryCard() {
-    const gallery = await getGalleries();
+    const { gallery = [] } = await getGalleries() || {};
 
     return (
         <>

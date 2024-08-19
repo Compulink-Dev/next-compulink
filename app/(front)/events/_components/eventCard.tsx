@@ -18,10 +18,10 @@ const getEvents = async () => {
 };
 
 async function EventCard() {
-    const events = await getEvents();
+    const { events = [] } = await getEvents() || {};
     return (
         <>
-            {events?.map((event: any) => (
+            {events.map((event: any) => (
                 <div
                     key={event._id}
                     className=" flex md:flex gap-4 w-[100%] h-96 border rounded mt-10"
