@@ -6,7 +6,6 @@ import LinkButton from "@/components/linkButton";
 const getEvents = async () => {
     try {
         const res = await fetch(`${process.env.API_ROUTE}/api/events`, {
-            cache: "no-store",
         });
         if (!res.ok) {
             throw new Error("Failed to fetch topics");
@@ -18,7 +17,7 @@ const getEvents = async () => {
 };
 
 async function Event() {
-    const { events = [] } = await getEvents() || {};
+    const { events } = await getEvents();
     return (
         <>
             {events?.slice(0, 1).map((events: any, index: any) => (

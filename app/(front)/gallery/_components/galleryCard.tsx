@@ -4,7 +4,6 @@ import Image from "next/image";
 const getGalleries = async () => {
     try {
         const res = await fetch(`${process.env.API_ROUTE}/api/gallery`, {
-            cache: "no-store",
         });
         if (!res.ok) {
             throw new Error("Failed to fetch gallery");
