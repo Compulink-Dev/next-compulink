@@ -10,7 +10,7 @@ const getEvents = async () => {
         const res = await fetch(`${process.env.API_ROUTE}/api/events`, {
         });
         if (!res.ok) {
-            throw new Error("Failed to fetch topics");
+            throw new Error("Failed to fetch events");
         }
         return res.json();
     } catch (error) {
