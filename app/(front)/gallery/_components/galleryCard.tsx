@@ -16,7 +16,7 @@ const getGalleries = async () => {
 };
 
 async function GalleryCard() {
-    const { gallery } = await getGalleries() || {};
+    const { gallery = [] } = await getGalleries() || {};
 
     console.log("Gallery :", gallery);
 
