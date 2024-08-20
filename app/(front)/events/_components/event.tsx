@@ -19,7 +19,7 @@ const getEvents = async () => {
 };
 
 async function Event() {
-    const { events } = await getEvents();
+    const { events } = await getEvents() || {};
     return (
         <>
             {events?.slice(0, 1).map((events: any, index: any) => (
