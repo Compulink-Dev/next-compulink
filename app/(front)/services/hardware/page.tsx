@@ -6,7 +6,7 @@ import { Label } from '@/components/ui/label'
 
 function Hardware() {
     return (
-        <MainLayout backImage='network.webp' image='/'>
+        <MainLayout backImage='network.webp' image=''>
             <div className="p-8">
                 <Label className='text-2xl font-bold mt-6'>Hardware</Label>
             </div>
