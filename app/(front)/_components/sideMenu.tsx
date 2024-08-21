@@ -11,7 +11,7 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet"
-import { Home, Image, Menu, Phone, ScanEye, ShieldAlert } from "lucide-react"
+import { Home, Image, Menu, Phone, ScanEye, ShieldAlert, Workflow } from "lucide-react"
 import Link from "next/link"
 import DropDownMenu from "./dropDownMenu"
 import { DropdownLink } from "./dropDownLink"
@@ -40,7 +40,7 @@ export function SideMenu() {
                         <ScanEye />
                         <Link href={'/portfolio'}>Portfolio</Link>
                     </div>
-                    <div className="flex gap-2 items-center">
+                    <div className="flex gap-2 items-center bg-blue-600 h-auto rounded text-white">
                         <DropdownLink />
                     </div>
                     <div className="flex gap-2 items-center">
@@ -50,6 +50,10 @@ export function SideMenu() {
                     <div className="flex gap-2 items-center">
                         <Image />
                         <Link href={'/gallery'}>Gallery</Link>
+                    </div>
+                    <div className="flex gap-2 items-center">
+                        <Workflow />
+                        <Link href={'/vacancy'}>Vacancy</Link>
                     </div>
                     <div className="flex gap-2 items-center">
                         <Phone />

@@ -1,18 +1,15 @@
 import MainLayout from '@/components/mainLayout'
-import React from 'react'
-import Hero from '../../_components/hero'
-import ServiceCard from '../../_components/serviceCard'
 import { Label } from '@/components/ui/label'
+import React from 'react'
+import ServiceCard from '../../_components/serviceCard'
 import ServiceTop from '../../_components/serviceTop'
 
-function Hardware() {
+function CloudComputing() {
     return (
-        <MainLayout backImage='network.webp' image=''>
+        <MainLayout backImage='host.webp' image=''>
+            <ServiceTop />
             <div className="p-8">
-                <Label className='text-2xl font-bold mt-6'>Hardware</Label>
-            </div>
-            <div className="">
-                <ServiceTop />
+                <Label className='text-2xl font-bold mt-6'>Cloud Computing</Label>
             </div>
             <div className="p-8 grid grid-cols-3 gap-8">
                 <ServiceCard />
@@ -23,4 +20,4 @@ function Hardware() {
     )
 }
 
-export default Hardware
+export default CloudComputing

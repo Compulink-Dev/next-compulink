@@ -18,8 +18,8 @@ function About() {
                 />
             </div>
             <div className="flex flex-col px-10 py-8">
-                <h1 className="font-semibold text-blue-500 text-4xl uppercase">
-                    Welcome to compulink systems
+                <h1 className="font-semibold text-blue-500 text-lg uppercase">
+                    Our Story
                 </h1>
                 <p className="text-start text-2xl  font-bold">
                     Compulink Systems has been in the IT Ecosystem for 30 Years.
@@ -37,18 +37,18 @@ function About() {
                     </div>
                     <div className="flex gap-2 py-2 pl-14 items-center -translate-x-[132px]">
                         <GoDotFill className="text-blue-500" />
-                        <h1 className="">Innovative Hardware Development</h1>
+                        <h1 className="">Software & System Integrationt</h1>
                     </div>{" "}
                     <div className="flex gap-2 py-2 pl-14 items-center -translate-x-[132px]">
                         <GoDotFill className="text-blue-500" />
-                        <h1 className="">Innovative Network Development</h1>
+                        <h1 className="">Network Infrastructure</h1>
                     </div>{" "}
                     <div className="flex gap-2 py-2 pl-14 items-center -translate-x-[132px]">
                         <GoDotFill className="text-blue-500" />
-                        <h1 className="">Innovative Cyber Security Development</h1>
+                        <h1 className="">Server Setup</h1>
                     </div>
                 </div>
-
+                <p className="text-slate-400">Building a brighter future with technology, ensuring every entity is polished with technology!</p>
                 <div className="mt-4">
                     <LinkButton link="/portfolio" name="Read more" />
                 </div>

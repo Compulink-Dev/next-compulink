@@ -51,6 +51,11 @@ function Header() {
                             </li>
                             <li className="">
                                 <Button variant={'ghost'}>
+                                    <Link href={'/vacancy'}>Vacancy</Link>
+                                </Button>
+                            </li>
+                            <li className="">
+                                <Button variant={'ghost'}>
                                     <Link href={'/contact'}>Contact</Link>
                                 </Button>
                             </li>

@@ -10,7 +10,7 @@ import LinkButton from "@/components/linkButton";
 
 export function ServiceCard({ icon, name, description, link }: any) {
     return (
-        <div className=" flex flex-col items-center  w-96 h-96 border-2 border-blue-900 rounded-lg">
+        <div className=" flex w-full flex-col items-center  h-96 border-2 border-blue-900 rounded-lg">
             <div className="py-6 pt-2 text-red-800">{icon}</div>
             <h1 className="text-red-700 font-semibold text-center text-xl">{name}</h1>
             <p className="px-4 text-gray-700 py-2">{description}</p>
@@ -22,7 +22,7 @@ export function ServiceCard({ icon, name, description, link }: any) {
 
 function Service() {
     return (
-        <div className="bg-scroll bg-gradient-to-r from-gray-100 bg-opacity h-full text-gray-700 py-6">
+        <div className="bg-scroll bg-gradient-to-r from-gray-100 bg-opacity h-full w-full text-gray-700 py-6">
             <div className="flex flex-col items-center justify-center">
                 <h1 className="text-center   uppercase text-xl font-semibold md:text-2xl py-4">
                     Our Services
@@ -34,7 +34,7 @@ function Service() {
                     Delivering unmatched service is what we live for. We create a culture
                     of care and service where our customer comes first. .
                 </p>
-                <div className="flex flex-wrap gap-6 m-10 mx-14">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 m-10 mx-14">
                     <ServiceCard
                         icon={<FaCloudDownloadAlt size={"2.5rem"} color="red" />}
                         name={"Cloud Computing"}

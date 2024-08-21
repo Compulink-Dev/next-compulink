@@ -6,6 +6,7 @@ import Software from './_components/software'
 import Networking from './_components/network'
 import { AccordionTabs } from './_components/accordion'
 import Hero from '../_components/hero'
+import Service from '../_components/service'
 
 function Portfolio() {
     return (
@@ -20,10 +21,7 @@ function Portfolio() {
                 </h1>
 
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit
-                    dolorem, incidunt voluptatem, magnam ducimus officia aliquid illum
-                    sint unde laborum nemo mollitia quis error recusandae dolor. Ullam
-                    non illum fugiat?
+                    In these years Compulink Systems has managed to deliver high standard products and services to various institutions in the service scope of networking services, cyber security, software services and hardware supply.
                 </p>
             </div>
             <div className="bg-slate-900 text-white">
@@ -31,6 +29,7 @@ function Portfolio() {
             </div>
             {/* <AboutSection /> */}
             <Services />
+            <Service />
             <h1 className="text-center text-3xl font-semibold pt-10 text-blue-700">
                 Projects
             </h1>

@@ -22,7 +22,7 @@ export function DropdownLink() {
     <div className="">
       <DropdownMenu >
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" className="flex items-center gap-1 justify-center">
+          <Button variant="ghost" className="flex items-center gap-1 justify-center hover:bg-transparent">
             <p className="">Services</p>
             <ChevronDown width={14} height={14} className="text-slate-700" />
           </Button>
