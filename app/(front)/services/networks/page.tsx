@@ -9,10 +9,10 @@ function Networks() {
             <div className="p-8">
                 <Label className='text-2xl font-bold mt-6'>Networking</Label>
             </div>
-            <div className="p-8 grid grid-cols-3 gap-8">
+            <div className="p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* <ServiceCard />
                 <ServiceCard />
-                <ServiceCard />
-                <ServiceCard />
+                <ServiceCard /> */}
             </div>
         </MainLayout>
     )

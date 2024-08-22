@@ -9,14 +9,16 @@ function Networking() {
             </h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mx-6 mb-14">
                 <Projects
-                    name="Store gate"
-                    description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum amet fugit dolorum omnis pariatur asperiores perspiciatis enim in est dolor voluptate reiciendis suscipit distinctio, magni, quas placeat veniam corporis repudiandae!"
-                    link='/'
+                    name="Cabs Marondera"
+                    description="The Society offers a diverse range of financial products and services that includes transaction and savings accounts, mobile banking, mortgage loans, money market investments, term deposits and pay-roll loans."
+                    link='/services/networks'
+                    image={'/images/cabs.png'}
                 />
                 <Projects
                     name="Old Mutual"
-                    description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum amet fugit dolorum omnis pariatur asperiores perspiciatis enim in est dolor voluptate reiciendis suscipit distinctio, magni, quas placeat veniam corporis repudiandae!"
-                    link='/'
+                    description="Old Mutual Zimbabwe provides financial solutions to individuals, small and medium-sized businesses, corporates and institutions."
+                    link='/services/networks'
+                    image={'/images/oldMutual.jpeg'}
                 />
             </div>
         </>

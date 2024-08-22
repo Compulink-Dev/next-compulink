@@ -11,7 +11,7 @@ export function AccordionTabs() {
         <Accordion type="single" collapsible className="w-full p-8">
             <AccordionItem value="item-1">
                 <AccordionTrigger className="py-4">
-                    <div className="flex gap-2 text-4xl items-center">
+                    <div className="flex gap-4 text-2xl items-center">
                         <Globe width={40} height={40} />
                         <p className="font-bold">Our Mission</p>
                     </div>
@@ -22,7 +22,7 @@ export function AccordionTabs() {
             </AccordionItem>
             <AccordionItem value="item-2">
                 <AccordionTrigger>
-                    <div className="flex gap-2 text-4xl items-center">
+                    <div className="flex gap-4 text-2xl items-center">
                         <ScanEye width={40} height={40} />
                         <p className="font-bold">Our Vision</p>
                     </div>
@@ -34,7 +34,7 @@ export function AccordionTabs() {
             </AccordionItem>
             <AccordionItem value="item-3">
                 <AccordionTrigger>
-                    <div className="flex gap-2 text-4xl items-center">
+                    <div className="flex gap-4 text-2xl items-center">
                         <BringToFront width={40} height={40} />
                         <p className="font-bold">Our Strategy</p>
                     </div>

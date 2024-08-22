@@ -17,7 +17,7 @@ function Footer() {
                 </div>
                 <div className="col-span-3 flex flex-col md:flex-row justify-start gap-8 md:gap-36 ml-8 items-start">
                     <div>
-                        <p className="font-bold text-2xl">Quick Links</p>
+                        <p className="font-semibold text-lg">Quick Links</p>
                         <div className="flex flex-col gap-4 mt-4">
                             <Link
                                 href={"/"}
@@ -46,7 +46,7 @@ function Footer() {
                         </div>
                     </div>
                     <div>
-                        <p className="font-bold text-2xl">More</p>
+                        <p className="font-semibold text-lg">More</p>
                         <div className="flex flex-col gap-4 mt-4">
                             <Link
                                 href={"/ticket"}
@@ -63,7 +63,7 @@ function Footer() {
                         </div>
                     </div>
                     <div>
-                        <p className="font-bold text-2xl">Services</p>
+                        <p className="font-semibold text-lg">Services</p>
                         <div className="flex flex-col gap-4 mt-4">
                             <Link
                                 href={"/services/software"}

@@ -12,15 +12,15 @@ function Contact() {
                     <div className="h-full w-2/3 md:w-2/4 p-8 rounded-lg border border-red-500">
                         <p className="font-bold text-xl text-center py-2">Contact Us</p>
                         <div className="flex flex-col mt-6 gap-4">
-                            <div className="grid grid-cols-4 gap-4">
+                            <div className="grid grid-cols-1 md:grid-cols-4  gap-4">
                                 <p className="font-bold text-sm col-span-1">Name</p>
                                 <input className="bg-gray-100 py-2 px-4 rounded-lg w-full outline-none border-none col-span-3" />
                             </div>
-                            <div className="grid grid-cols-4 gap-4">
+                            <div className="grid grid-cols-1 md:grid-cols-4  gap-4">
                                 <p className="font-bold text-sm col-span-1">Email</p>
                                 <input className="bg-gray-100 py-2 px-4 rounded-lg w-full outline-none border-none col-span-3" />
                             </div>
-                            <div className="grid grid-cols-4 gap-4">
+                            <div className="grid grid-cols-1 md:grid-cols-4  gap-4">
                                 <p className="font-bold text-sm col-span-1">Message</p>
                                 <textarea
                                     rows={5}

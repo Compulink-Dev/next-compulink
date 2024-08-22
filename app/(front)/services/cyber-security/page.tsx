@@ -7,14 +7,19 @@ import ServiceTop from '../../_components/serviceTop'
 function CloudComputing() {
     return (
         <MainLayout backImage='host.webp' image=''>
-            <ServiceTop />
+            <ServiceTop
+                image="cyber.webp"
+                title="Cyber Security"
+                description="Cyber security solutions are technological tools and services that help protect organizations against cyber attacks, which can result in application downtime, theft of sensitive data, damage to reputation, compliance fines, and other adverse consequences."
+                description2="With over 30 years of experience helping thousands of businesses like yours withstand cyber threats and protect valuable data, we’re confident in our ability to help you improve your network security."
+            />
             <div className="p-8">
                 <Label className='text-2xl font-bold mt-6'>Cloud Computing</Label>
             </div>
             <div className="p-8 grid grid-cols-3 gap-8">
+                {/* <ServiceCard />
                 <ServiceCard />
-                <ServiceCard />
-                <ServiceCard />
+                <ServiceCard /> */}
             </div>
         </MainLayout>
     )

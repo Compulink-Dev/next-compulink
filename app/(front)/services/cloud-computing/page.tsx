@@ -8,6 +8,7 @@ function CloudComputing() {
     return (
         <MainLayout backImage='host.webp' image=''>
             <ServiceTop
+                image="host.webp"
                 title="Cloud Computing"
                 description="Cloud technology can centralize the data capture, storage, and interpretation processes."
                 description2="It can also reduce the costs associated with these critical processes and generate far richer, more precise, faster data-led insights, which banks can use to drive performance"
@@ -16,9 +17,9 @@ function CloudComputing() {
                 <Label className='text-2xl font-bold mt-6'>Cloud Computing</Label>
             </div>
             <div className="p-8 grid grid-cols-3 gap-8">
+                {/* <ServiceCard />
                 <ServiceCard />
-                <ServiceCard />
-                <ServiceCard />
+                <ServiceCard /> */}
             </div>
         </MainLayout>
     )

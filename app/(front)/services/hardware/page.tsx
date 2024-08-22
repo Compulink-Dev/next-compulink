@@ -12,12 +12,17 @@ function Hardware() {
                 <Label className='text-2xl font-bold mt-6'>Hardware</Label>
             </div>
             <div className="">
-                <ServiceTop />
+                <ServiceTop
+                    image="hardware.jpeg"
+                    title="Hardware"
+                    description="Hardware refers to the external and internal devices and equipment that enable you to perform major functions such as input, output, storage, communication, processing, and more. There are two types of computer hardware: external and internal."
+                    description2="External hardware devices include monitors, keyboards, printers, and scanners, whereas internal hardware devices include motherboards, hard drives, and RAM"
+                />
             </div>
-            <div className="p-8 grid grid-cols-3 gap-8">
+            <div className="p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* <ServiceCard />
                 <ServiceCard />
-                <ServiceCard />
-                <ServiceCard />
+                <ServiceCard /> */}
             </div>
         </MainLayout>
     )
