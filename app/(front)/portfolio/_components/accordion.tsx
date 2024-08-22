@@ -17,7 +17,7 @@ export function AccordionTabs() {
                     </div>
                 </AccordionTrigger>
                 <AccordionContent className="text-lg">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum amet fugit dolorum omnis pariatur asperiores perspiciatis enim in est dolor voluptate reiciendis suscipit distinctio, magni, quas placeat veniam corporis repudiandae!
+                    Our mission is to innovate specific technologies that meet a need and transform experiences through innovation. We are committed to values such as excellence, integrity, sustainability and advancing the industry while embracing diversity.
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
@@ -28,8 +28,7 @@ export function AccordionTabs() {
                     </div>
                 </AccordionTrigger>
                 <AccordionContent className="text-lg">
-                    Yes. It comes with default styles that matches the other
-                    components&apos; aesthetic.
+                    Our vision is to lead technology by innovating specific area or technology. We aspire to create a world where a specific outcome or impact, fostering qualities like sustainability, connectivity and enhancing experiences for target audience or global community.
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
@@ -40,8 +39,7 @@ export function AccordionTabs() {
                     </div>
                 </AccordionTrigger>
                 <AccordionContent className="text-lg">
-                    Yes. It&apos;s animated by default, but you can disable it if you
-                    prefer.
+                    Our strategy is to achieve key strategic goals by leveraging in specific technologies or areas. We will optimize product offerings through strategic initiatives such as partnerships, research and development, or market expansion. By implementing key embracing industry trends, we aim to lead in technology advancements and sustain long-term growth.
                 </AccordionContent>
             </AccordionItem>
         </Accordion>

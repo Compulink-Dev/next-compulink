@@ -1,8 +1,8 @@
 "use client";
-import FillButton from '@/components/fillButton';
 import LinkButton from '@/components/linkButton';
 import MainLayout from '@/components/mainLayout';
 import React from "react";
+import ContactMap from './_components/contactMap';
 
 function Contact() {
     return (
@@ -35,7 +35,7 @@ function Contact() {
                 </div>
                 <div className="flex flex-col items-center justify-center py-10">
                     <h1 className="text-2xl text-blue-600 font-semibold uppercase">
-                        We You Can Find Us
+                        Where You Can Find Us
                     </h1>
                     <div>
                         {/* <iframe
@@ -49,6 +49,7 @@ function Contact() {
             ></iframe> */}
                     </div>
                 </div>
+                <ContactMap />
             </div>
         </MainLayout>
     );
