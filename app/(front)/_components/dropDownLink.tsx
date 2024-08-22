@@ -39,6 +39,12 @@ export function DropdownLink() {
             <DropdownMenuRadioItem value="networks">
               <Link href={'/services/networks'}>Networks</Link>
             </DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value="networks">
+              <Link href={'/services/cyber-security'}>Cyber Security</Link>
+            </DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value="networks">
+              <Link href={'/services/cloud-computing'}>Cloud Computing</Link>
+            </DropdownMenuRadioItem>
             <DropdownMenuRadioItem value="technical">
               <Link href={'/services/technical'}>Technical Support</Link>
             </DropdownMenuRadioItem>

@@ -13,16 +13,16 @@ export function CarouselSize() {
     return (
         <Carousel
             opts={{
-                align: "start",
+                align: "center",
             }}
-            className="w-full max-w-sm"
+            className="w-[600px]] max-w-sm  bg-red-500 "
         >
             <CarouselContent>
                 {Array.from({ length: 5 }).map((_, index) => (
-                    <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                        <div className="p-1">
+                    <CarouselItem key={index} className="">
+                        <div className="p-1 w-full ">
                             <Card>
-                                <CardContent className="flex aspect-square items-center justify-center p-6">
+                                <CardContent className="flex w-full h-[300px] aspect-square items-center justify-center p-6">
                                     <span className="text-3xl font-semibold">{index + 1}</span>
                                 </CardContent>
                             </Card>

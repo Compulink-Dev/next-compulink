@@ -20,7 +20,7 @@ function HomeCarousel() {
         slidesToScroll: 1,
         autoplay: true,
         speed: 1000,
-        autoplaySpeed: 8000,
+        autoplaySpeed: 2000,
         cssEase: "linear",
     };
     return (

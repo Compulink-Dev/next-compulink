@@ -67,7 +67,7 @@ export function VacancyApplyModal() {
                     </div>
                 </div>
                 <DialogFooter>
-                    <Button type="submit">Save changes</Button>
+                    <Button type="submit">Send application</Button>
                 </DialogFooter>
             </DialogContent>
         </Dialog>

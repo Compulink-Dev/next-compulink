@@ -8,9 +8,8 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { VacancyApplyModal } from "./vacancyApplyModal"
+import { ScrollArea } from "@radix-ui/react-scroll-area"
 
 export function VacancyModal() {
     return (
@@ -25,51 +24,28 @@ export function VacancyModal() {
                         Check if you meet the requirements and apply
                     </DialogDescription>
                 </DialogHeader>
-                <div className="grid gap-4 py-4">
-                    <div className="grid grid-cols-4 items-center gap-4">
-                        <Label htmlFor="name" className="text-right">
-                            Name
-                        </Label>
-                        <Input
-                            id="name"
-                            defaultValue="Enter name"
-                            className="col-span-3"
-                        />
-                    </div>
-                    <div className="grid grid-cols-4 items-center gap-4">
-                        <Label htmlFor="username" className="text-right">
-                            Email
-                        </Label>
-                        <Input
-                            id="username"
-                            defaultValue="Enter email"
-                            className="col-span-3"
-                        />
-                    </div>
-                    <div className="grid grid-cols-4 items-center gap-4">
-                        <Label htmlFor="username" className="text-right">
-                            Phone number
-                        </Label>
-                        <Input
-                            id="phone"
-                            defaultValue="Enter phone"
-                            className="col-span-3"
-                        />
-                    </div>
-                    <div className="grid grid-cols-4 items-center gap-4">
-                        <Label htmlFor="username" className="text-right">
-                            Cv
-                        </Label>
-                        <Input
-                            id="username"
-                            type="file"
-                            className="col-span-3"
-                        />
-                    </div>
+                <div className="">
+                    <ScrollArea className="h-72 w-full rounded-md border">
+                        <div className="grid gap-4 py-4 space-y-2 p-4">
+                            <div className="">
+                                <p className="">Position</p>
+                                <p className="">Software Development</p>
+                            </div>
+                            <div className="">
+                                <p className="">Description</p>
+                                <p className="">Software Development</p>
+                            </div>
+                            <div className="">
+                                <p className="">Requirements</p>
+                                <p className="">Software Development</p>
+                            </div>
+
+                        </div>
+                    </ScrollArea>
                 </div>
                 <DialogFooter>
                     <VacancyApplyModal />
-                    <Button type="submit">Save changes</Button>
+                    <Button variant={'ghost'} className="border">Cancel</Button>
                 </DialogFooter>
             </DialogContent>
         </Dialog>

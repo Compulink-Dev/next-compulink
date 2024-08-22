@@ -12,15 +12,12 @@ import Service from './_components/service';
 import Testimonials from './_components/testimonials';
 import HomeCarousel from './_components/carousel';
 import Promotion from './_components/promotions';
+import HomeLayout from '@/components/homeLayout';
 
 export default function Home() {
   return (
-    <MainLayout backImage='main.jpg' image='https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png'>
+    <HomeLayout>
       <div className="">
-        <div className="">
-          {/* <Image src='/images/hero.jpg' alt='' width={200} height={200} className='w-full h-[500px]' />
-          <div className="">Right</div> */}
-        </div>
         <Parnters />
         <About />
         <Work />
@@ -30,6 +27,6 @@ export default function Home() {
         <Promotion />
         <Chatbot />
       </div>
-    </MainLayout>
+    </HomeLayout>
   );
 }

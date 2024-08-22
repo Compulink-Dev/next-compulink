@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/table"
 import { VacancyModal } from "./vacancyModal"
 import { VacancyApplyModal } from "./vacancyApplyModal"
+import Link from "next/link"
 
 const vacancies = [
     {
@@ -49,8 +50,13 @@ export function VacancyTable() {
                         <TableCell>{vacancy.duration}</TableCell>
                         <TableCell className="text-right">
                             <div className="space-x-2">
+                                {/* <VacancyModal /> */}
+                                <Button className="border" variant={'ghost'}>
+                                    <Link href={"/vacancy/2"}>
+                                        View
+                                    </Link>
+                                </Button>
                                 <VacancyApplyModal />
-                                <VacancyModal />
                             </div>
                         </TableCell>
                     </TableRow>
