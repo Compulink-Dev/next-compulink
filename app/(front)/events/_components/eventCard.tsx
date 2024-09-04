@@ -1,62 +1,76 @@
-import React from "react";
-import Image from "next/image";
-import FillButton from '../../../../components/fillButton';
-import LinkButton from "@/components/linkButton";
-import { LocateIcon, Timer } from "lucide-react";
-
-const getEvents = async () => {
-    try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}/api/events`, {
-        });
-        if (!res.ok) {
-            throw new Error("Failed to fetch events");
-        }
-        return res.json();
-    } catch (error) {
-        console.log(error);
-    }
-};
+import LinkButton from '@/components/linkButton'
+import getEvents from '@/lib/events/getEvents'
+import { Locate, LocateIcon, Timer } from 'lucide-react'
+import Image from 'next/image'
+import React from 'react'
+import { EventModal } from './eventModal'
 
 async function EventCard() {
-    const { events = [] } = await getEvents() || {};
+    const events = await getEvents()
     return (
         <>
-            {events.map((event: any) => (
+            {events?.slice(0, 1).map((events: any, index: any) => (
                 <div
-                    key={event._id}
-                    className=" flex md:flex gap-4 w-[100%] h-96 border rounded mt-10"
-                >
-                    <Image
-                        src={event.imageUrl}
-                        height={400}
-                        width={300}
-                        alt=""
-                        className="h-72 w-72 rounded object-contain mx-3 my-10"
-                    />
-                    <div className="flex-col items-center justify-center p-8 ">
-                        <h1 className="text-lg font-semibold pb-8">{event.title}</h1>
-                        <p className="text-gray-500 pb-8 truncate  h-44 w-44">
-                            {event.description}
-                        </p>
-                        <div className="flex justify-center items-center gap-2 text-sm text-white">
-                            <div className="text-slate-600 flex items-center justify-center gap-2">
-                                <LocateIcon />
-                                <p className="text-slate-700">{event.venue}</p>
+                    key={index}
+                    className="bg-slate-50 -translate-y-20">
+                    <h1 className="text-2xl font-semibold text-center py-6">
+                        Upcoming Events
+                    </h1>
+                    <div className="grid grid-cols-1 md:grid-cols-2 py-8 px-4">
+                        <div className="bg-orange-100 items flex justify-center rounded-lg ">
+                            <div className="relative">
+                                <Image
+                                    className="flex items-center justify-center p-12"
+                                    src="/images/event.png"
+                                    width={800}
+                                    alt=""
+                                    height={800}
+                                />
+                                <div className="absolute bottom-28 md:bottom-32 left-16">
+                                    <p className="text-lg md:text-3xl font-bold text-blue-900 w-56">
+                                        {events.title}
+                                    </p>
+                                </div>
                             </div>
-                            <div className="text-slate-600 flex items-center justify-center gap-2">
-                                <Timer />
-                                <p className="text-slate-800">{event.date}</p>
-                            </div>
-
                         </div>
-                        <div className="w-28 py-4">
-                            <LinkButton name={"Read more"} link={"https://www.evolveictsummit.com/"} />
+
+                        <div className="items-center justify-center">
+                            <h1 className="font-bold text-[30px] px-4 pt-16">
+                                {events.title}
+                            </h1>
+                            <p className="p-6 text-gray-400">{events.description}</p>
+                            <h1 className="text-center p-2 font-bold text-[24px]">
+                                Category
+                            </h1>
+                            <h2 className="text-center text-gray-400 ">General</h2>
+
+                            <div className="flex flex-col gap-2 items-center justify-center">
+                                <div className="flex flex-col items-center justify-center p-4 gap-4 ">
+                                    <div className="flex items-center gap-2">
+                                        <Locate className="text-sm text-slate-400" />
+                                        <p className="">
+                                            {events.venue}
+                                        </p>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <Timer className="text-sm text-slate-400" />
+                                        <p className="">
+                                            {events.date}
+                                        </p>
+                                    </div>
+                                    <div className="flex items-center gap-4">
+                                        <EventModal />
+                                        <LinkButton name="View more" link="/" />
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
             ))}
         </>
-    );
+    )
 }
 
-export default EventCard;
+export default EventCard

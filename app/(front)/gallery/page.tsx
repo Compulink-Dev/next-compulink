@@ -1,10 +1,7 @@
 import React from "react";
-import FillButton from '@/components/fillButton';
 import MainLayout from '@/components/mainLayout';
 import GalleryCard from './_components/galleryCard'
-import LinkButton from "@/components/linkButton";
-import Galleries from "./_components/galleries";
-import GalleryTest from "./_components/galleryTest";
+import GalleryList from "./_components/galleries";
 
 function Gallery() {
     return (
@@ -24,7 +21,7 @@ function Gallery() {
                 </div>
                 <div className="col-span-2 gap-6 ">
                     <div className="flex flex-wrap gap-10 px-8">
-                        <GalleryCard />
+                        <GalleryList />
                     </div>
                 </div>
 
@@ -34,7 +31,7 @@ function Gallery() {
                     <p className="font-bold text-2xl">All Galleries</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-2 px-8">
-                    <Galleries />
+                    <GalleryCard />
                 </div>
             </div>
             {/* <div className="flex flex-wrap items-center justify-center gap-10 py-10 ">
@@ -42,9 +39,6 @@ function Gallery() {
                     <LinkButton name={"View More"} link={""} />
                 </div>
             </div> */}
-            <div className="mt-8">
-                <GalleryTest />
-            </div>
         </MainLayout>
     );
 }

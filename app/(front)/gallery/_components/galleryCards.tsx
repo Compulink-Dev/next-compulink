@@ -1,20 +1,60 @@
-import { Button } from '@/components/ui/button'
-import getGalleries from '@/lib/gallery/getGalleries'
-import Image from 'next/image'
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
-async function GalleryList() {
+interface GalleryItem {
+    projectName: string;
+    description: string;
+    company: string;
+    createdAt: string;
+    // Add other fields as necessary
+}
 
-    const galleries = await getGalleries()
+const getGalleries = async (): Promise<{ gallery: GalleryItem[] }> => {
+    try {
+        console.log("Fetching galleries from:", `${process.env.NEXT_PUBLIC_API_ROUTE}/api/gallery`);
+        const res = await fetch(`/api/gallery`);
+        if (!res.ok) {
+            throw new Error("Failed to fetch gallery");
+        }
+        return res.json();
+    } catch (error) {
+        console.error(error);
+        return { gallery: [] }; // Return an empty array in case of error
+    }
+};
+
+const GalleryCard: React.FC = () => {
+    const [gallery, setGallery] = useState<GalleryItem[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+
+    useEffect(() => {
+        const fetchGalleries = async () => {
+            const data = await getGalleries();
+            console.log("Galleries : ", data);
+
+            setGallery(data.gallery);
+            setLoading(false);
+        };
+
+        fetchGalleries();
+    }, []);
+
+    if (loading) {
+        return <div className="px-8">
+            <p>Loading...</p>
+        </div>
+    }
 
     return (
         <>
-            {galleries.length === 0 ? (
+            {gallery.length === 0 ? (
                 <div className="px-8">
                     <p>No galleries found</p>
                 </div>
             ) : (
-                galleries.slice(0, 2).map((item, index) => (
+                gallery.slice(0, 2).map((item, index) => (
                     <div
                         key={index}
                         className="w-96 h-full border rounded"
@@ -45,7 +85,7 @@ async function GalleryList() {
                 ))
             )}
         </>
-    )
+    );
 }
 
-export default GalleryList
+export default GalleryCard;
