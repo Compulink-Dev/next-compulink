@@ -6,7 +6,7 @@ import ServiceTop from '../../_components/serviceTop'
 
 function Networks() {
     return (
-        <MainLayout backImage='main.jpg' image=''>
+        <MainLayout backImage='net.jpg' image=''>
             <div className="p-8">
                 <Label className='text-2xl font-bold mt-6'>Networking</Label>
             </div>

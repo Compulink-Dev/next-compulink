@@ -7,7 +7,7 @@ import { SoftwareTabs } from './_components/softwareTabs'
 
 function Software() {
     return (
-        <MainLayout backImage='software.webp' image=''>
+        <MainLayout backImage='connect1.jpg' image=''>
             <ServiceTop
                 image="software.webp"
                 title="Software Solutions"

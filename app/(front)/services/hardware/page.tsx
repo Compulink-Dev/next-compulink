@@ -7,7 +7,7 @@ import ServiceTop from '../../_components/serviceTop'
 
 function Hardware() {
     return (
-        <MainLayout backImage='network.webp' image=''>
+        <MainLayout backImage='hardware.jpg' image=''>
             <div className="p-8">
                 <Label className='text-2xl font-bold mt-6'>Hardware</Label>
             </div>

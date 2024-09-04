@@ -6,7 +6,7 @@ import ServiceTop from '../../_components/serviceTop'
 
 function CloudComputing() {
     return (
-        <MainLayout backImage='host.webp' image=''>
+        <MainLayout backImage='cyber2.jpg' image=''>
             <ServiceTop
                 image="cyber.webp"
                 title="Cyber Security"
