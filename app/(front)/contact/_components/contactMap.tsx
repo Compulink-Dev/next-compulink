@@ -7,10 +7,10 @@ import Maps from "./maps";
 
 const Info = ({ icon, title, info1, info2 }: any) => {
     return (
-        <div className="flex justify-start gap-12 items-center mt-8 text-white">
+        <div className="flex flex-col md:flex-row justify-start gap-4 md:gap-10 items-center mt-4 md:mt-8 text-white">
             <div className="">{icon}</div>
             <div className="">
-                <p className="text-2xl md:text-3xl font-bold">{title}</p>
+                <p className="text-lg md:text-3xl font-bold">{title}</p>
                 <p className="text-xs md:text-sm">{info1}</p>
                 <p className="text-xs md:text-sm">{info2}</p>
             </div>
