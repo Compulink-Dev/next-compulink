@@ -13,6 +13,7 @@ interface GalleryItem {
 
 const getGalleries = async (): Promise<{ gallery: GalleryItem[] }> => {
     try {
+        console.log("Fetching galleries from:", `${process.env.NEXT_PUBLIC_API_ROUTE}/api/gallery`);
         const res = await fetch(`/api/gallery`);
         if (!res.ok) {
             throw new Error("Failed to fetch gallery");
@@ -31,6 +32,8 @@ const GalleryCard: React.FC = () => {
     useEffect(() => {
         const fetchGalleries = async () => {
             const data = await getGalleries();
+            console.log("Galleries : ", data);
+
             setGallery(data.gallery);
             setLoading(false);
         };
@@ -39,13 +42,17 @@ const GalleryCard: React.FC = () => {
     }, []);
 
     if (loading) {
-        return <p>Loading...</p>;
+        return <div className="px-8">
+            <p>Loading...</p>;
+        </div>
     }
 
     return (
         <>
             {gallery.length === 0 ? (
-                <p>No galleries found</p>
+                <div className="px-8">
+                    <p>No galleries found</p>
+                </div>
             ) : (
                 gallery.slice(0, 2).map((item, index) => (
                     <div

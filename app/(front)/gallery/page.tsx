@@ -21,7 +21,7 @@ function Gallery() {
                     </p>
                 </div>
                 <div className="col-span-2 gap-6 ">
-                    <div className="flex flex-wrap gap-10">
+                    <div className="flex flex-wrap gap-10 px-8">
                         <GalleryCard />
                     </div>
                 </div>
