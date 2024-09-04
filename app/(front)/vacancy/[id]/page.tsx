@@ -7,7 +7,7 @@ import React from 'react'
 
 function VacancyPage() {
     return (
-        <MainLayout backImage='main.jpg' image=''>
+        <MainLayout backImage='class1.jpg' image=''>
             <div className='w-full p-8'>
                 <p className="mb-4 font-bold text-2xl">Position</p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
