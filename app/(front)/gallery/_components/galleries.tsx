@@ -25,7 +25,7 @@ const getGalleries = async (): Promise<{ gallery: GalleryItem[] }> => {
     }
 };
 
-const GalleryCard: React.FC = () => {
+const Galleries: React.FC = () => {
     const [gallery, setGallery] = useState<GalleryItem[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
 
@@ -43,7 +43,7 @@ const GalleryCard: React.FC = () => {
 
     if (loading) {
         return <div className="px-8">
-            <p>Loading...</p>
+            <p>Loading...</p>;
         </div>
     }
 
@@ -54,10 +54,10 @@ const GalleryCard: React.FC = () => {
                     <p>No galleries found</p>
                 </div>
             ) : (
-                gallery.slice(0, 2).map((item, index) => (
+                gallery.map((item, index) => (
                     <div
                         key={index}
-                        className="w-96 h-full border rounded"
+                        className="w-full h-full border rounded"
                     >
                         <Image
                             src="/images/gallery.gif"
@@ -88,4 +88,4 @@ const GalleryCard: React.FC = () => {
     );
 }
 
-export default GalleryCard;
+export default Galleries;

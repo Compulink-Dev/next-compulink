@@ -7,7 +7,7 @@ import { Locate, Timer } from "lucide-react";
 
 const getEvents = async () => {
     try {
-        const res = await fetch(`${process.env.API_ROUTE}/api/events`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}/api/events`, {
         });
         if (!res.ok) {
             throw new Error("Failed to fetch events");
