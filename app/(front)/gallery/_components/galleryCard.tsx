@@ -1,59 +1,82 @@
-import React from "react";
+'use client'
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
-const getGalleries = async () => {
+interface GalleryItem {
+    projectName: string;
+    description: string;
+    company: string;
+    createdAt: string;
+    // Add other fields as necessary
+}
+
+const getGalleries = async (): Promise<{ gallery: GalleryItem[] }> => {
     try {
-        const res = await fetch(`${process.env.API_ROUTE}/api/gallery`, {
-        });
+        const res = await fetch(`/api/gallery`);
         if (!res.ok) {
             throw new Error("Failed to fetch gallery");
         }
         return res.json();
-
     } catch (error) {
-        console.log(error);
+        console.error(error);
+        return { gallery: [] }; // Return an empty array in case of error
     }
 };
 
-async function GalleryCard() {
-    const { gallery = [] } = await getGalleries() || {};
+const GalleryCard: React.FC = () => {
+    const [gallery, setGallery] = useState<GalleryItem[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
 
-    console.log("Gallery :", gallery);
+    useEffect(() => {
+        const fetchGalleries = async () => {
+            const data = await getGalleries();
+            setGallery(data.gallery);
+            setLoading(false);
+        };
 
+        fetchGalleries();
+    }, []);
+
+    if (loading) {
+        return <p>Loading...</p>;
+    }
 
     return (
         <>
-            {gallery?.slice(0, 2).map((gallery: any, index: any) => (
-                <div
-                    key={index}
-                    className="w-96 h-full border rounded">
-                    <Image
-                        src={
-                            "/images/gallery.gif"
-                        }
-                        height={400}
-                        width={500}
-                        alt=""
-                        className="w-96 h-56 object-contain"
-                    />
-                    <div className="p-2 ">
-                        <h1 className=" uppercase text-sm  font-semibold">
-                            Technology
-                            <hr className="border bg-blue-700 py-[0.8px] w-24" />
-                        </h1>
-                        <p className="text-2xl font-bold">{gallery.projectName}</p>
-                        <p className="text-ellipsis overflow-hidden py-2 text-gray-600">
-                            {gallery.description}
-                        </p>
-                        <p className="text-gray-700">
-                            By <span className="text-black">{gallery.company}</span> -{" "}
-                            {/* {dateFormat(gallery.createdAt)} */}
-                        </p>
-                        <Button className="bg-blue-700 hover:bg-blue-500 my-2">View More</Button>
+            {gallery.length === 0 ? (
+                <p>No galleries found</p>
+            ) : (
+                gallery.slice(0, 2).map((item, index) => (
+                    <div
+                        key={index}
+                        className="w-96 h-full border rounded"
+                    >
+                        <Image
+                            src="/images/gallery.gif"
+                            height={400}
+                            width={500}
+                            alt={item.projectName}
+                            className="w-96 h-56 object-contain"
+                        />
+                        <div className="p-2">
+                            <h1 className="uppercase text-sm font-semibold">
+                                Technology
+                                <hr className="border bg-blue-700 py-[0.8px] w-24" />
+                            </h1>
+                            <p className="text-2xl font-bold">{item.projectName}</p>
+                            <p className="text-ellipsis overflow-hidden py-2 text-gray-600">
+                                {item.description}
+                            </p>
+                            <p className="text-gray-700">
+                                By <span className="text-black">{item.company}</span> -{" "}
+                                {/* {dateFormat(item.createdAt)} */}
+                            </p>
+                            <Button className="bg-blue-700 hover:bg-blue-500 my-2">View More</Button>
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))
+            )}
         </>
     );
 }
