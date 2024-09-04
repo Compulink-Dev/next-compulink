@@ -59,7 +59,7 @@ const Galleries: React.FC = () => {
                         key={index}
                         className="w-full h-full border rounded"
                     >
-                        <Image
+                        <img
                             src="/images/gallery.gif"
                             height={400}
                             width={500}

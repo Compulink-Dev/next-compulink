@@ -4,6 +4,7 @@ import MainLayout from '@/components/mainLayout';
 import GalleryCard from './_components/galleryCard'
 import LinkButton from "@/components/linkButton";
 import Galleries from "./_components/galleries";
+import GalleryTest from "./_components/galleryTest";
 
 function Gallery() {
     return (
@@ -41,6 +42,9 @@ function Gallery() {
                     <LinkButton name={"View More"} link={""} />
                 </div>
             </div> */}
+            <div className="mt-8">
+                <GalleryTest />
+            </div>
         </MainLayout>
     );
 }
