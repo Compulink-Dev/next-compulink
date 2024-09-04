@@ -6,7 +6,7 @@ import Event from './_components/event'
 
 async function Events() {
     return (
-        <MainLayout backImage='host.webp' image=''>
+        <MainLayout backImage='class1.jpg' image=''>
             <Event />
             <div className=" w-full h-full my-8">
                 <h1 className="text-center text-3xl ">All Events</h1>

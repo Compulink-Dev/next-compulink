@@ -6,7 +6,7 @@ import ContactMap from './_components/contactMap';
 
 function Contact() {
     return (
-        <MainLayout backImage='hero.webp' image=''>
+        <MainLayout backImage='comm2.jpg' image=''>
             <div className="">
                 <div className="h-full py-8 my-8 w-full flex justify-center items-center">
                     <div className="h-full w-2/3 md:w-2/4 p-8 rounded-lg border border-red-500">

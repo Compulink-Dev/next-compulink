@@ -7,7 +7,7 @@ import { VacancyTable } from './_components/vacancyTable'
 
 function VacancyPage() {
     return (
-        <MainLayout backImage='main.jpg' image='https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png'>
+        <MainLayout backImage='cyber2.jpg' image=''>
             <div className='p-8'>
                 <p className="text-center text-2xl font-bold">Available vacancies</p>
                 <div className="mt-4">

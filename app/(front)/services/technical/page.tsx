@@ -20,6 +20,7 @@ function Technical() {
                 <ServiceCard
                     image={'oldMutual.jpeg'}
                     title="Old Mutual Database Backup"
+                    link="technical/old-mutual"
                     description="Database backup is the process of creating a copy of a company's master and transaction data files. As consumers, we need extra supplies when our typical resources aren't usable. For instance, in case of a blackout, one would want candles, flashlights, and canned goods."
                 />
             </div>

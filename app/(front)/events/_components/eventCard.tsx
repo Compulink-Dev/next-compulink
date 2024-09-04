@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import FillButton from '../../../../components/fillButton';
 import LinkButton from "@/components/linkButton";
+import { LocateIcon, Timer } from "lucide-react";
 
 const getEvents = async () => {
     try {
@@ -38,8 +39,15 @@ async function EventCard() {
                             {event.description}
                         </p>
                         <div className="flex justify-center items-center gap-2 text-sm text-white">
-                            <p className="px-2 py-1 rounded bg-red-500">{event.venue}</p>
-                            <p className="px-2 py-1 rounded  bg-blue-900">{event.date}</p>
+                            <div className="text-slate-600 flex items-center justify-center gap-2">
+                                <LocateIcon />
+                                <p className="text-slate-700">{event.venue}</p>
+                            </div>
+                            <div className="text-slate-600 flex items-center justify-center gap-2">
+                                <Timer />
+                                <p className="text-slate-800">{event.date}</p>
+                            </div>
+
                         </div>
                         <div className="w-28 py-4">
                             <LinkButton name={"Read more"} link={"https://www.evolveictsummit.com/"} />

@@ -38,7 +38,7 @@ function Footer() {
                                 Events
                             </Link>
                             <Link
-                                href={"/news"}
+                                href={"/events"}
                                 className="text-gray-500 text-sm hover:text-blue-500 hover:border-b-0 border-blue-500 "
                             >
                                 Updates & News
@@ -72,7 +72,7 @@ function Footer() {
                                 Software Services
                             </Link>
                             <Link
-                                href={"/services/networking"}
+                                href={"/services/networks"}
                                 className="text-gray-500 text-sm hover:text-blue-500 hover:border-b-0 border-blue-500 "
                             >
                                 Networking Services

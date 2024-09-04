@@ -6,7 +6,7 @@ import LinkButton from "@/components/linkButton";
 
 function Gallery() {
     return (
-        <MainLayout backImage='web.webp' image=''>
+        <MainLayout backImage='hardware.jpg' image=''>
             <div className="grid grid-cols-1 md:grid-cols-3 py-10">
                 <div className="p-10 col-span-1">
                     <h1 className="text-6xl uppercase font-semibold text-blue-900">
@@ -26,11 +26,11 @@ function Gallery() {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-10 py-10 ">
+            {/* <div className="flex flex-wrap items-center justify-center gap-10 py-10 ">
                 <div className="py-10">
                     <LinkButton name={"View More"} link={""} />
                 </div>
-            </div>
+            </div> */}
         </MainLayout>
     );
 }

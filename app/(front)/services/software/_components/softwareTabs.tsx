@@ -19,6 +19,27 @@ import {
 } from "@/components/ui/tabs"
 import PriceCard from "./priceCard"
 
+
+const lists = [
+    {
+        id: 1,
+        title: "Details"
+    },
+    {
+        id: 2,
+        title: "Details 2"
+    },
+    {
+        id: 3,
+        title: "Details 3"
+    },
+    {
+        id: 4,
+        title: "Details 4"
+    }
+]
+
+
 export function SoftwareTabs() {
     return (
         <Tabs defaultValue="account" className="w-full">
@@ -39,24 +60,90 @@ export function SoftwareTabs() {
                             <div className="">
                                 <p className="text-lg font-bold">Website Design Packages</p>
                                 <div className="grid grid-cols-1 md:grid-cols-4 mt-2 gap-4 items-center">
-                                    <PriceCard />
-                                    <PriceCard />
-                                    <PriceCard />
-                                    <PriceCard />
+                                    <PriceCard
+                                        lists={lists}
+                                        title="Silver packages"
+                                        subtitle="1-5 pages"
+                                        price="150"
+                                    />
+                                    <PriceCard
+                                        lists={lists}
+                                        title="Gold packages"
+                                        subtitle="1-8 pages"
+                                        price="250"
+                                    />
+                                    <PriceCard
+                                        lists={lists}
+                                        title="Platinum packages"
+                                        subtitle="1-12 pages"
+                                        price="300"
+                                    />
+                                    <PriceCard
+                                        lists={lists}
+                                        title="Custom packages"
+                                        subtitle="User defined"
+                                        price="N/A"
+                                    />
                                 </div>
                             </div>
 
                             <div className="">
-                                <p className="text-lg font-bold">Hosting Packages</p>
+                                <p className="text-lg font-bold">Email Hosting</p>
                                 <div className="grid grid-cols-1 md:grid-cols-4 mt-2 gap-4 items-center">
-                                    <PriceCard />
+                                    <PriceCard
+                                        lists={lists}
+                                        title="Silver packages"
+                                        subtitle="1-5 pages"
+                                        price="150"
+                                    />
+                                    <PriceCard
+                                        lists={lists}
+                                        title="Gold packages"
+                                        subtitle="1-8 pages"
+                                        price="250"
+                                    />
+                                    <PriceCard
+                                        lists={lists}
+                                        title="Platinum packages"
+                                        subtitle="1-12 pages"
+                                        price="300"
+                                    />
+                                    <PriceCard
+                                        lists={lists}
+                                        title="Custom packages"
+                                        subtitle="User defined"
+                                        price="N/A"
+                                    />
                                 </div>
                             </div>
 
                             <div className="">
-                                <p className="text-lg font-bold">Website Design</p>
+                                <p className="text-lg font-bold">Website Hosting</p>
                                 <div className="grid grid-cols-1 md:grid-cols-4 mt-2 gap-4 items-center">
-                                    <PriceCard />
+                                    <PriceCard
+                                        lists={lists}
+                                        title="Silver packages"
+                                        subtitle="1-5 pages"
+                                        price="150"
+                                    />
+                                    <PriceCard
+                                        lists={lists}
+                                        title="Gold packages"
+                                        subtitle="1-8 pages"
+                                        price="250"
+                                    />
+                                    <PriceCard
+                                        lists={lists}
+                                        title="Platinum packages"
+                                        subtitle="1-12 pages"
+                                        price="300"
+                                    />
+                                    <PriceCard
+                                        lists={lists}
+                                        title="Custom packages"
+                                        subtitle="User defined"
+                                        price="N/A"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -76,6 +163,7 @@ export function SoftwareTabs() {
                             <ServiceCard
                                 image="e-learn.jpeg"
                                 title="E-Education Platform"
+                                link="software/e-learn"
                                 description="An electronic learning platform is an integrated set of interactive online services that provide trainers, learners, and others involved in education with information, tools, and resources to support and enhance education delivery and management. One type of eLearning software is a learning management system (LMS)."
                             />
                         </div>

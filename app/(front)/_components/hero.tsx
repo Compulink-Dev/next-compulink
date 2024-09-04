@@ -5,7 +5,10 @@ import React from 'react'
 function Hero({ backImage, image }: { backImage: string, image: string }) {
     return (
         <div
-            style={{ backgroundImage: `url("/images/${backImage}")` }}
+            style={{
+                backgroundImage: `url("/images/${backImage}")`,
+                backgroundPosition: "center"
+            }}
             className=' h-[600px] text-white flex mt-4 items-center px-8 w-full'>
             <div className="">
                 <section className="">
@@ -14,11 +17,11 @@ function Hero({ backImage, image }: { backImage: string, image: string }) {
                             <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
                                 Building digital products & brands.
                             </h1>
-                            <p className="max-w-2xl mb-6 font-light text-gray-300 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+                            <p className="max-w-2xl mb-6 font-light text-white lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
                                 Here at Compulink we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.
                             </p>
                             <div className="flex items-center gap-1">
-                                <a href="/portfolio" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+                                <a href="/portfolio" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg hover:text-slate-500 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
                                     Get started
                                     <ChevronRight className='pl-2' />
                                 </a>

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 const getGalleries = async () => {
     try {
@@ -26,7 +27,7 @@ async function GalleryCard() {
             {gallery?.slice(0, 2).map((gallery: any, index: any) => (
                 <div
                     key={index}
-                    className="w-96 h-full border ">
+                    className="w-96 h-full border rounded">
                     <Image
                         src={
                             "/images/gallery.gif"
@@ -49,6 +50,7 @@ async function GalleryCard() {
                             By <span className="text-black">{gallery.company}</span> -{" "}
                             {/* {dateFormat(gallery.createdAt)} */}
                         </p>
+                        <Button className="bg-blue-700 hover:bg-blue-500 my-2">View More</Button>
                     </div>
                 </div>
             ))}
