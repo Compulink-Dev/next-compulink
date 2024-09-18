@@ -7,7 +7,7 @@ import { VacancyTable } from './_components/vacancyTable'
 
 function VacancyPage() {
     return (
-        <MainLayout backImage='cyber2.jpg' image=''>
+        <MainLayout backImage='web3.jpg' image=''>
             <div className='p-8'>
                 <p className="text-center text-2xl font-bold">Available vacancies</p>
                 <div className="mt-4">

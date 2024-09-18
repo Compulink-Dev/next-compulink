@@ -7,9 +7,9 @@ import { SoftwareTabs } from './_components/softwareTabs'
 
 function Software() {
     return (
-        <MainLayout backImage='connect1.jpg' image=''>
+        <MainLayout backImage='web5.jpg' image=''>
             <ServiceTop
-                image="software.webp"
+                image="web5.jpg"
                 title="Software Solutions"
                 description="We offer solutions ranging in the given scope ( ARTIFICIAL INTELLIGENCE, DATA SCIENCE SOLUTIONS, API INTEGRATION, WEB & MOBILE SOLUTIONS, CHATBOTS, PIPELINE DEVELOPMENT)"
                 description2="Use of the software is important for automation of the organisation's tasks as well as reporting the progress or lags in the organisation's activities. This improves company's efficiency and effectiveness of the company's activities. The software reduces the workload and automation of activities."

@@ -4,7 +4,7 @@ import React from 'react'
 
 function Ticket() {
     return (
-        <MainLayout backImage='web.webp' image=''>
+        <MainLayout backImage='hardware.jpg' image=''>
             <div className="">
                 <div className="h-full py-8 my-8 w-full flex justify-center items-center">
                     <div className="h-full w-2/3 md:w-2/4 p-8 rounded-lg border border-red-500">

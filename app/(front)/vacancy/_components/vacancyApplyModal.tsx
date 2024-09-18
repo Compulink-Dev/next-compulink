@@ -67,7 +67,9 @@ export function VacancyApplyModal() {
                     </div>
                 </div>
                 <DialogFooter>
-                    <Button type="submit">Send application</Button>
+                    <Button
+                        className="bg-blue-600 hover:bg-blue-400"
+                        type="submit">Send application</Button>
                 </DialogFooter>
             </DialogContent>
         </Dialog>

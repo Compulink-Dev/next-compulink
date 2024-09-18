@@ -1,3 +1,4 @@
+import { Facebook, Instagram, Twitter } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -13,6 +14,23 @@ function Footer() {
                             Technology is about building solutions in partnership with the
                             society
                         </p>
+                        <div className="mt-8 flex flex-wrap items-center gap-4">
+                            <div className="h-10 w-10 flex items-center justify-center rounded-full bg-blue-700 hover:bg-blue-400 text-white">
+                                <Link href={''}>
+                                    <Facebook size={20} />
+                                </Link>
+                            </div>
+                            <div className="h-10 w-10 flex items-center justify-center rounded-full bg-blue-400 hover:bg-blue-600 text-white">
+                                <Link href={''}>
+                                    <Twitter size={20} />
+                                </Link>
+                            </div>
+                            <div className="h-10 w-10 flex items-center justify-center rounded-full bg-purple-500 hover:bg-purple-600 text-white">
+                                <Link href={''}>
+                                    <Instagram size={20} />
+                                </Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="col-span-3 flex flex-col md:flex-row justify-start gap-8 md:gap-36 ml-8 items-start">
