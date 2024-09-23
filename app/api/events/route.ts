@@ -3,9 +3,9 @@ import dbConnect from '@/lib/dbConnect'
 import Event from '@/lib/models/(events)/events'
 
 export async function POST(request: NextRequest) {
-    const { title, date, imageUrl, venue, description } = await request.json();
+    const { title, date, imageUrl, venue, description, link } = await request.json();
     await dbConnect();
-    await Event.create({ title, date, imageUrl, venue, description });
+    await Event.create({ title, date, imageUrl, venue, description, link });
     return NextResponse.json({ message: "Event created" }, { status: 201 });
 }
 

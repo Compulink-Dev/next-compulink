@@ -16,7 +16,7 @@ function Parnters() {
                     of care and service where our customer comes first.
                 </p>
             </div>
-            <div className="flex flex-wrap items-center justify-center  gap-8">
+            <div className="flex flex-wrap items-center justify-center px-8 md:px-0  gap-8">
                 <CardWithForm
                     //   link={
                     //     "https://companieslogo.com/img/orig/OMU.JO_BIG-5d5b6185.png?t=1657183124"

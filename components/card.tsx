@@ -24,7 +24,7 @@ import LinkButton from "./linkButton"
 
 export function CardWithForm({ name, link }: { name: string, link: string }) {
     return (
-        <Card className="w-[350px]">
+        <Card className="w-full md:w-[350px]">
             <CardHeader>
                 <CardTitle>{name}</CardTitle>
                 <CardDescription>Enquire a project in one-click.</CardDescription>

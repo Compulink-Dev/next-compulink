@@ -11,8 +11,8 @@ function HomeLayout({ children }: { children: React.ReactNode }) {
         <div>
             {/* <Navbar /> */}
             <Header />
-            <HeroCarousel />
             <main className="">
+                <HeroCarousel />
                 {children}
             </main>
             <Footer />

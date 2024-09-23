@@ -19,7 +19,7 @@ const Card = ({ image, link }: any) => {
 function HomeCarousel() {
     const settings = {
         infinite: true,
-        slidesToShow: 4,
+        slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
         speed: 1000,
@@ -35,7 +35,7 @@ function HomeCarousel() {
                         <hr className="border-x-4 border-gray-800" />
                     </h1>
                 </div>
-                <Slider {...settings} className="">
+                <Slider {...settings} className="flex flex-wrap">
                     <Card
                         image={
                             "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Dahua_Technology_logo.svg/2560px-Dahua_Technology_logo.svg.png"

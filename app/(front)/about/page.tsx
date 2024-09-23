@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function About() {
     return (
-        <MainLayout backImage='host.webp' image=''>
+        <MainLayout backImage='web2.webp' image=''>
             <div className="p-4">
                 <motion.div
                     initial={{ opacity: 0 }}

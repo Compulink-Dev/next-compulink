@@ -10,7 +10,7 @@ import LinkButton from "@/components/linkButton";
 
 export function ServiceCard({ icon, name, description, link }: any) {
     return (
-        <div className=" flex w-full flex-col items-center  h-96 border-2 border-blue-900 rounded-lg">
+        <div className=" flex w-full flex-col items-center h-auto md:h-96 border-2 pb-4 md:pb-0 border-blue-900 rounded-lg">
             <div className="py-6 pt-2 text-red-800">{icon}</div>
             <h1 className="text-red-700 font-semibold text-center text-xl">{name}</h1>
             <p className="px-4 text-gray-700 py-2">{description}</p>

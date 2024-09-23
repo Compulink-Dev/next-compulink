@@ -49,7 +49,7 @@ export function VacancyTable() {
                         <TableCell>{vacancy.status}</TableCell>
                         <TableCell>{vacancy.duration}</TableCell>
                         <TableCell className="text-right">
-                            <div className="space-x-2">
+                            <div className="space-x-2 space-y-3">
                                 {/* <VacancyModal /> */}
                                 <Button className="border" variant={'ghost'}>
                                     <Link href={"/vacancy/2"}>

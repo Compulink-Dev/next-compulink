@@ -10,14 +10,14 @@ import Service from '../_components/service'
 
 function Portfolio() {
     return (
-        <MainLayout backImage='connect1.jpg' image=''>
-            <div className=" flex flex-col items-center justify-center w-full py-14 px-32">
+        <MainLayout backImage='web5.webp' image=''>
+            <div className=" flex flex-col items-center justify-center w-full py-14 px-8  md:px-32">
                 <h1 className=" pb-10 text-center text-3xl text-blue-700 font-semibold">
                     <div className=" relative translate-x-52 translate-y- w-5  overflow-hidden inline-block">
                         {/* <div className=" h-10  bg-blue-800 -rotate-45 transform origin-top-left"></div> */}
                     </div>
                     Who Are We?
-                    <hr className="w-48 translate-x-5 border-x-4 border-gray-300 my-1" />
+                    <hr className="border-x-4 border-gray-300 my-1" />
                 </h1>
 
                 <p>

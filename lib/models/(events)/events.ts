@@ -21,6 +21,9 @@ const eventsSchema = new Schema(
             type: String,
             required: true,
         },
+        link: {
+            type: String,
+        },
     },
     { timestamps: true }
 );

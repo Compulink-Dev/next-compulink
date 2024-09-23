@@ -53,7 +53,7 @@ function Contact() {
         <MainLayout backImage='comm2.jpg' image=''>
             <div className="">
                 <div className="h-full py-8 my-8 w-full flex justify-center items-center">
-                    <div className="h-full w-2/3 md:w-2/4 p-8 rounded-lg border border-red-500">
+                    <div className="h-full w-full md:w-2/4 mx-4 md:mx-0 p-8 rounded-lg border border-red-500">
                         <p className="font-bold text-xl text-center py-2">Contact Us</p>
                         <form onSubmit={sendEmail} action="" className="">
                             <div className="flex flex-col mt-6 gap-4">

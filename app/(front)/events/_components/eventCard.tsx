@@ -16,7 +16,7 @@ async function EventCard() {
                     <h1 className="text-2xl font-semibold text-center py-6">
                         Upcoming Events
                     </h1>
-                    <div className="grid grid-cols-1 md:grid-cols-2 py-8 px-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 p-8">
                         <div className="bg-orange-100 items flex justify-center rounded-lg ">
                             <div className="relative">
                                 <Image
@@ -34,18 +34,18 @@ async function EventCard() {
                             </div>
                         </div>
 
-                        <div className="items-center justify-center">
+                        <div className="px-12">
                             <h1 className="font-bold text-[30px] px-4 pt-16">
                                 {events.title}
                             </h1>
-                            <p className="p-6 text-gray-400">{events.description}</p>
-                            <h1 className="text-center p-2 font-bold text-[24px]">
+                            <p className="py-6 px-4 text-gray-400">{events.description}</p>
+                            <h1 className=" py-2 px-4 font-bold text-[24px]">
                                 Category
                             </h1>
-                            <h2 className="text-center text-gray-400 ">General</h2>
+                            <h2 className=" text-gray-400 px-4">General</h2>
 
-                            <div className="flex flex-col gap-2 items-center justify-center">
-                                <div className="flex flex-col items-center justify-center p-4 gap-4 ">
+                            <div className="flex flex-col gap-2 ">
+                                <div className="flex flex-col p-4 gap-4 ">
                                     <div className="flex items-center gap-2">
                                         <Locate className="text-sm text-slate-400" />
                                         <p className="">

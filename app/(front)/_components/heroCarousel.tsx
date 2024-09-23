@@ -17,7 +17,7 @@ function HeroCarousel() {
     return (
         <div
             id="carouselExampleSlidesOnly"
-            className="relative mt-8"
+            className="relative mt-16 md:mt-12"
             data-twe-carousel-init
             data-twe-ride="carousel"
             data-twe-interval="4000"
@@ -30,19 +30,19 @@ function HeroCarousel() {
                     className="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                     data-twe-carousel-item
                     data-twe-carousel-active>
-                    <div className="relative inline-block w-full h-full">
+                    <div className="relative text-white inline-block w-full h-full">
                         <img
-                            src="/images/cloud.webp"
-                            className="block w-full"
+                            src="/images/web9.webp"
+                            className="block h-[400px] md:h-full w-full"
                             alt="Camera" />
                         <div className="absolute inset-0 flex items-center justify-center">
                             <section className="">
                                 <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-                                    <div className="mr-auto place-self-center lg:col-span-7">
-                                        <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-white">
+                                    <div className="mr-auto  place-self-center lg:col-span-7">
+                                        <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
                                             Building digital products & brands.
                                         </h1>
-                                        <p className="max-w-2xl mb-6 font-light text-gray-300 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+                                        <p className="max-w-2xl mb-6 font-light text-black lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
                                             Here at Compulink we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.
                                         </p>
                                         <div className="flex items-center gap-1">
@@ -75,8 +75,8 @@ function HeroCarousel() {
                     data-twe-carousel-item>
                     <div className="relative inline-block w-full h-full">
                         <img
-                            src="/images/hero.webp"
-                            className="block w-full"
+                            src="/images/web5.webp"
+                            className="block w-full h-[400px] md:h-full "
                             alt="Camera" />
                         <div className="absolute inset-0 flex items-center justify-center">
                             <section className="">
@@ -114,8 +114,8 @@ function HeroCarousel() {
                     data-twe-carousel-item>
                     <div className="relative inline-block w-full h-full">
                         <img
-                            src="/images/host.webp"
-                            className="block w-full"
+                            src="/images/web3.webp"
+                            className="block w-full h-[400px] md:h-full "
                             alt="Camera" />
                         <div className="absolute inset-0 flex items-center justify-center">
                             <section className="">
