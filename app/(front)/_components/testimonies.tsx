@@ -24,7 +24,9 @@ export default function Testimonies() {
             >
                 {
                     testimonies.map((testimony) => (
-                        <SwiperSlide>
+                        <SwiperSlide
+                            key={testimony.id}
+                        >
                             <div className="flex flex-col">
                                 <figure className="max-w-screen-md mx-auto text-center py-6 w-[100%]">
                                     <svg
