@@ -15,6 +15,7 @@ import { Home, Image, Menu, Phone, ScanEye, ShieldAlert, Workflow } from "lucide
 import Link from "next/link"
 import DropDownMenu from "./dropDownMenu"
 import { DropdownLink } from "./dropDownLink"
+import { FaBlog } from "react-icons/fa"
 
 export function SideMenu() {
     return (
@@ -50,6 +51,10 @@ export function SideMenu() {
                     <div className="flex gap-2 items-center">
                         <Image />
                         <Link href={'/gallery'}>Gallery</Link>
+                    </div>
+                    <div className="flex gap-2 items-center">
+                        <FaBlog />
+                        <Link href={'/blog'}>Blog</Link>
                     </div>
                     <div className="flex gap-2 items-center">
                         <Workflow />
