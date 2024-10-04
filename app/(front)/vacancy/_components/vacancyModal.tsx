@@ -1,55 +1,28 @@
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
-import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogFooter,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
-} from "@/components/ui/dialog"
-import { VacancyApplyModal } from "./vacancyApplyModal"
-import { ScrollArea } from "@radix-ui/react-scroll-area"
 
-export function VacancyModal() {
+export function VacancyModal({ vacancy, onClose }: any) {
     return (
-        <Dialog>
-            <DialogTrigger asChild>
-                <Button variant={'ghost'} className="border">View</Button>
-            </DialogTrigger>
-            <DialogContent className="sm:max-w-[425px]">
+        <Dialog open={!!vacancy} onOpenChange={onClose}>
+            <DialogContent className="max-w-lg w-full h-auto max-h-[80vh] overflow-y-auto mx-auto">
                 <DialogHeader>
-                    <DialogTitle>View this available position</DialogTitle>
-                    <DialogDescription>
-                        Check if you meet the requirements and apply
-                    </DialogDescription>
+                    <DialogTitle>{vacancy.position}</DialogTitle>
                 </DialogHeader>
-                <div className="">
-                    <ScrollArea className="h-full w-full rounded-md border">
-                        <div className="grid gap-4 py-4 space-y-2 p-4">
-                            <div className="">
-                                <p className="">Intern</p>
-                                <p className="">Accounts Intern</p>
-                            </div>
-                            <div className="">
-                                <p className="">Intern</p>
-                                <p className="">Sales & Marketing</p>
-                            </div>
-                            <div className="">
-                                <p className="">Graduate Trainee</p>
-                                <p className="">Accounts Clerk</p>
-                            </div>
-                            <div className="">
-                                <p className="">Contract</p>
-                                <p className="">Back End Developer</p>
-                            </div>
-                        </div>
-                    </ScrollArea>
+                <div className="space-y-4">
+                    <img
+                        src={vacancy.imageUrl}
+                        alt={vacancy.position}
+                        className="w-full h-auto rounded"
+                    />
+                    <p>Status: {vacancy.status}</p>
+                    <p>Duration: {vacancy.duration}</p>
+                    {/* Download Button */}
+                    <a href={vacancy.imageUrl} download className="inline-block">
+                        <Button className="mt-4" variant="outline">
+                            Download Image
+                        </Button>
+                    </a>
                 </div>
-                <DialogFooter>
-                    <VacancyApplyModal />
-                    <Button variant={'ghost'} className="border">Cancel</Button>
-                </DialogFooter>
             </DialogContent>
         </Dialog>
     )
