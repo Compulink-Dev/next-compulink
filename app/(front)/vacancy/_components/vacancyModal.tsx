@@ -25,7 +25,7 @@ export function VacancyModal() {
                     </DialogDescription>
                 </DialogHeader>
                 <div className="">
-                    <ScrollArea className="h-72 w-full rounded-md border">
+                    <ScrollArea className="h-full w-full rounded-md border">
                         <div className="grid gap-4 py-4 space-y-2 p-4">
                             <div className="">
                                 <p className="">Intern</p>
