@@ -28,16 +28,20 @@ export function VacancyModal() {
                     <ScrollArea className="h-72 w-full rounded-md border">
                         <div className="grid gap-4 py-4 space-y-2 p-4">
                             <div className="">
-                                <p className="">Position</p>
-                                <p className="">Software Development</p>
+                                <p className="">Intern</p>
+                                <p className="">Accounts Intern</p>
                             </div>
                             <div className="">
-                                <p className="">Description</p>
-                                <p className="">Software Development</p>
+                                <p className="">Intern</p>
+                                <p className="">Sales & Marketing</p>
                             </div>
                             <div className="">
-                                <p className="">Requirements</p>
-                                <p className="">Software Development</p>
+                                <p className="">Graduate Trainee</p>
+                                <p className="">Accounts Clerk</p>
+                            </div>
+                            <div className="">
+                                <p className="">Contract</p>
+                                <p className="">Back End Developer</p>
                             </div>
 
                         </div>
