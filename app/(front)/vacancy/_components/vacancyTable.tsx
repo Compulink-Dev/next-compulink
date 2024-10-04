@@ -19,7 +19,7 @@ const vacancies = [
         position: "Software Developer",
         status: "Short term contract",
         duration: "3 Months",
-        imageUrl: "/images/software-developer.jpg",
+        imageUrl: "/images/software.png",
     },
     {
         position: "Accounts Intern",
