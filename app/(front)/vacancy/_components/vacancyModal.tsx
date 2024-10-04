@@ -43,7 +43,6 @@ export function VacancyModal() {
                                 <p className="">Contract</p>
                                 <p className="">Back End Developer</p>
                             </div>
-
                         </div>
                     </ScrollArea>
                 </div>
