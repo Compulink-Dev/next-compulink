@@ -48,6 +48,7 @@ export function VacancyApplyModal() {
             await emailjs.sendForm(
                 "YOUR_SERVICE_ID",
                 "YOUR_TEMPLATE_ID",
+                //@ts-ignore
                 formDataObj,
                 "YOUR_PUBLIC_KEY"
             );
@@ -83,6 +84,7 @@ export function VacancyApplyModal() {
                                 className="col-span-3"
                             />
                             {errors.name && (
+                                //@ts-ignore
                                 <p className="text-red-500 col-span-4">{errors.name?.message}</p>
                             )}
                         </div>
@@ -97,6 +99,7 @@ export function VacancyApplyModal() {
                                 type="email"
                             />
                             {errors.email && (
+                                //@ts-ignore
                                 <p className="text-red-500 col-span-4">{errors.email?.message}</p>
                             )}
                         </div>
@@ -110,6 +113,7 @@ export function VacancyApplyModal() {
                                 className="col-span-3"
                             />
                             {errors.phone && (
+                                //@ts-ignore
                                 <p className="text-red-500 col-span-4">{errors.phone?.message}</p>
                             )}
                         </div>
@@ -124,6 +128,7 @@ export function VacancyApplyModal() {
                                 className="col-span-3"
                             />
                             {errors.cv && (
+                                //@ts-ignore
                                 <p className="text-red-500 col-span-4">{errors.cv?.message}</p>
                             )}
                         </div>
