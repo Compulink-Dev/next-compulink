@@ -36,16 +36,22 @@ function ContactMap() {
                     info2={"Harare, Zimbabwe"}
                 />
                 <Info
+                    icon={<FiHome className="text-4xl " />}
+                    title="Bulawayo office"
+                    info1={"22 Princess Park Mansions Samuel Parirenyatwa Street/ Leopold Takawira Avenue Bulawayo"}
+                    info2={"Bulawayo, Zimbabwe"}
+                />
+                <Info
                     icon={<MdOutlineMail className="text-4xl" />}
                     title={"Email address"}
-                    info1={"Email (01):info@compulink.co.zw"}
-                    info2={"Email (02):sales@compulink.co.zw"}
+                    info1={"Email :info@compulink.co.zw"}
+                    info2={"Email :sales@compulink.co.zw"}
                 />
                 <Info
                     icon={<FiPhoneCall className="text-4xl" />}
                     title={"Our phone"}
-                    info1={"Call (01) : +(263) 774 656 163"}
-                    info2={"Call (02) : +(263) 08677 105028"}
+                    info1={"Call (Bulawayo)  : +(263) 29 277 794"}
+                    info2={"Call (Harare) : +(263) 24 249 4407"}
                 />
             </div>
         </div>
