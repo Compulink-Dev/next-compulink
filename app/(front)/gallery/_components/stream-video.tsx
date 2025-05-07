@@ -17,9 +17,7 @@ const StreamedVideo = () => {
         Your browser does not support the video tag.
       </video>
       <div className="flex flex-col items-start px-4">
-        <h1 className="text-lg font-bold my-2">
-          ZITF-COMPULINK MOBILE FINALE.mp4
-        </h1>
+        <h1 className="text-lg font-bold my-2">ZITF-COMPULINK MOBILE FINALE</h1>
         <p className="text-gray-700">
           This video showcases the highlights of the Compulink Mobile Finale at
           the ZITF event. Experience the innovation and technology that
