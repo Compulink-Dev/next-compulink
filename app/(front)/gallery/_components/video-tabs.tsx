@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import VideoCard from "./video-card";
 import VideoEmbed from "./video-embed";
+import StreamedVideo from "./stream-video";
 
 function VideoTab() {
   const [video, setVideo] = useState(""); // Selected video
@@ -66,7 +67,7 @@ function VideoTab() {
         />
       )}
       <div className="">
-        <VideoEmbed />
+        <StreamedVideo />
       </div>
     </div>
   );
