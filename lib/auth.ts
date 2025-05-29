@@ -4,7 +4,7 @@ import dbConnect from '@/lib/dbConnect'
 import UserModel from '@/lib/models/UserModel'
 import NextAuth from 'next-auth'
 
-export const config = {
+export const authOptions = {
     providers: [
         CredentialsProvider({
             credentials: {
@@ -71,4 +71,4 @@ export const {
     auth,
     signIn,
     signOut,
-} = NextAuth(config)
+} = NextAuth(authOptions)

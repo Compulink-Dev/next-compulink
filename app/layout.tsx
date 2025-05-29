@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
+import SessionWrapper from "@/components/SessionWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,8 +35,11 @@ export default function RootLayout({
         strategy="lazyOnload"
         defer
       />
-      <body className={inter.className}>{children}
-        <Toaster />
+      <body className={inter.className}>
+        <SessionWrapper>
+          {children}
+          <Toaster />
+        </SessionWrapper>
       </body>
     </html>
   );

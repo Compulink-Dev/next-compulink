@@ -1,12 +1,14 @@
-import MainLayout from '@/components/mainLayout'
-import React from 'react'
+import MainLayout from "@/components/mainLayout";
+import React from "react";
+import Hero from "../_components/hero";
 
 function Projects() {
-    return (
-        <MainLayout backImage='host.webp' image=''>
-            <div className='p-8'>Projects</div>
-        </MainLayout>
-    )
+  return (
+    <div>
+      <Hero backImage="host.webp" image="" />
+      <div className="p-8">Projects</div>
+    </div>
+  );
 }
 
-export default Projects
+export default Projects;

@@ -1,148 +1,151 @@
-//@ts-ignore
+// app/vacancy/_components/vacancyApplyModal.tsx
+"use client";
+
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogFooter,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import emailjs from "emailjs-com";
+import { useState } from "react";
+import { toast } from "@/components/ui/use-toast";
 
-// Define Zod schema for form validation
 const formSchema = z.object({
-    name: z.string().min(1, "Name is required"),
-    email: z.string().email("Invalid email address"),
-    phone: z.string().min(10, "Phone number must be at least 10 characters"),
-    cv: z
-        .any()
-        .refine((file) => file?.length === 1, "CV is required")
-        .refine((file) => file[0]?.size <= 2 * 1024 * 1024, "Max file size is 2MB"),
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email address"),
+  phone: z.string().min(10, "Phone number must be at least 10 characters"),
+  cv: z
+    .instanceof(FileList)
+    .refine((files) => files.length > 0, "CV is required")
+    .refine(
+      (files) => files[0].size <= 5 * 1024 * 1024,
+      "Max file size is 5MB"
+    ),
 });
 
 export function VacancyApplyModal() {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-        reset,
-    } = useForm({
-        resolver: zodResolver(formSchema),
-    });
+  const [isOpen, setIsOpen] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm({
+    resolver: zodResolver(formSchema),
+  });
 
-    const onSubmit = async (data: any) => {
-        const formDataObj = new FormData();
-        formDataObj.append("name", data.name);
-        formDataObj.append("email", data.email);
-        formDataObj.append("phone", data.phone);
-        formDataObj.append("cv", data.cv[0]);
+  const onSubmit = async (data: any) => {
+    try {
+      const formData = new FormData();
+      formData.append("name", data.name);
+      formData.append("email", data.email);
+      formData.append("phone", data.phone);
+      formData.append("cv", data.cv[0]);
 
-        try {
-            await emailjs.sendForm(
-                "YOUR_SERVICE_ID",
-                "YOUR_TEMPLATE_ID",
-                //@ts-ignore
-                formDataObj,
-                "YOUR_PUBLIC_KEY"
-            );
-            alert("Application sent successfully!");
-            reset(); // reset form after successful submission
-        } catch (error) {
-            console.error("Error sending email:", error);
-            alert("Failed to send application.");
-        }
-    };
+      // Replace with your actual API endpoint
+      const response = await fetch("/api/applications", {
+        method: "POST",
+        body: formData,
+      });
 
-    return (
-        <Dialog>
-            <DialogTrigger asChild>
-                <Button className="bg-blue-600 hover:bg-blue-400">Apply</Button>
-            </DialogTrigger>
-            <DialogContent className="sm:max-w-[425px]">
-                <DialogHeader>
-                    <DialogTitle>Apply for this position</DialogTitle>
-                    <DialogDescription>
-                        Fill in the details below and attach your CV
-                    </DialogDescription>
-                </DialogHeader>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="grid gap-4 py-4">
-                        <div className="grid grid-cols-4 items-center gap-4">
-                            <Label htmlFor="name" className="text-right">
-                                Name
-                            </Label>
-                            <Input
-                                id="name"
-                                {...register("name")}
-                                className="col-span-3"
-                            />
-                            {errors.name && (
-                                //@ts-ignore
-                                <p className="text-red-500 col-span-4">{errors.name?.message}</p>
-                            )}
-                        </div>
-                        <div className="grid grid-cols-4 items-center gap-4">
-                            <Label htmlFor="email" className="text-right">
-                                Email
-                            </Label>
-                            <Input
-                                id="email"
-                                {...register("email")}
-                                className="col-span-3"
-                                type="email"
-                            />
-                            {errors.email && (
-                                //@ts-ignore
-                                <p className="text-red-500 col-span-4">{errors.email?.message}</p>
-                            )}
-                        </div>
-                        <div className="grid grid-cols-4 items-center gap-4">
-                            <Label htmlFor="phone" className="text-right">
-                                Phone number
-                            </Label>
-                            <Input
-                                id="phone"
-                                {...register("phone")}
-                                className="col-span-3"
-                            />
-                            {errors.phone && (
-                                //@ts-ignore
-                                <p className="text-red-500 col-span-4">{errors.phone?.message}</p>
-                            )}
-                        </div>
-                        <div className="grid grid-cols-4 items-center gap-4">
-                            <Label htmlFor="cv" className="text-right">
-                                CV
-                            </Label>
-                            <Input
-                                id="cv"
-                                type="file"
-                                {...register("cv")}
-                                className="col-span-3"
-                            />
-                            {errors.cv && (
-                                //@ts-ignore
-                                <p className="text-red-500 col-span-4">{errors.cv?.message}</p>
-                            )}
-                        </div>
-                    </div>
-                    <DialogFooter>
-                        <Button
-                            className="bg-blue-600 hover:bg-blue-400"
-                            type="submit"
-                        >
-                            Send application
-                        </Button>
-                    </DialogFooter>
-                </form>
-            </DialogContent>
-        </Dialog>
-    );
+      if (!response.ok) throw new Error("Failed to submit application");
+
+      toast({
+        title: "Success",
+        description: "Your application has been submitted successfully!",
+      });
+      setIsOpen(false);
+      reset();
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to submit application. Please try again.",
+        variant: "destructive",
+      });
+    }
+  };
+
+  return (
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <DialogTrigger asChild>
+        <Button className="bg-blue-600 hover:bg-blue-700">Apply Now</Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle>Apply for this position</DialogTitle>
+          <DialogDescription>
+            Fill in your details and upload your CV
+          </DialogDescription>
+        </DialogHeader>
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+          <div>
+            <Label htmlFor="name">Full Name</Label>
+            <Input id="name" {...register("name")} />
+            {errors.name && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.name.message as string}
+              </p>
+            )}
+          </div>
+
+          <div>
+            <Label htmlFor="email">Email</Label>
+            <Input id="email" type="email" {...register("email")} />
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.email.message as string}
+              </p>
+            )}
+          </div>
+
+          <div>
+            <Label htmlFor="phone">Phone Number</Label>
+            <Input id="phone" {...register("phone")} />
+            {errors.phone && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.phone.message as string}
+              </p>
+            )}
+          </div>
+
+          <div>
+            <Label htmlFor="cv">Upload CV (PDF, max 5MB)</Label>
+            <Input
+              id="cv"
+              type="file"
+              accept=".pdf,.doc,.docx"
+              {...register("cv")}
+            />
+            {errors.cv && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.cv.message as string}
+              </p>
+            )}
+          </div>
+
+          <DialogFooter>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => setIsOpen(false)}
+            >
+              Cancel
+            </Button>
+            <Button type="submit" disabled={isSubmitting}>
+              {isSubmitting ? "Submitting..." : "Submit Application"}
+            </Button>
+          </DialogFooter>
+        </form>
+      </DialogContent>
+    </Dialog>
+  );
 }

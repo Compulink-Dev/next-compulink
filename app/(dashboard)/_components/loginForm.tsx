@@ -1,72 +1,92 @@
+// app/login/page.tsx
 "use client";
-import Link from "next/link";
+
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function LoginForm() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
-    const router = useRouter();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
 
-    const handleSubmit = async (e: any) => {
-        e.preventDefault();
+    try {
+      const result = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
 
-        try {
-            const res = await signIn("credentials", {
-                email,
-                password,
-                redirect: false,
-            });
+      if (result?.error) {
+        setError("Invalid email or password");
+        return;
+      }
 
-            if (res?.error) {
-                setError("Please enter valid credentials");
-                return;
-            }
+      if (result?.ok) {
+        router.push("/dashboard/home");
+      }
+    } catch (err) {
+      setError("An unexpected error occurred");
+      console.error("Login error:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-            router.replace("dashboard/home");
-        } catch (error) {
-            console.log(error);
-        }
-    };
+  return (
+    <div className="grid place-items-center h-screen">
+      <div className="shadow-lg p-5 rounded-lg border-t-4 border-blue-400 w-full max-w-md">
+        <h1 className="text-xl font-bold my-4">Login</h1>
 
-    return (
-        <div className="grid place-items-center h-screen">
-            <div className="shadow-lg p-5 rounded-lg border-t-4 border-blue-400">
-                <h1 className="text-xl font-bold my-4">Login</h1>
-
-                <form onSubmit={handleSubmit} className="flex flex-col gap-6 w-80">
-                    <input
-                        onChange={(e) => setEmail(e.target.value)}
-                        type="email"
-                        placeholder="Email"
-                        className="p-2 rounded-md outline-none bg-gray-200 text-black"
-                    />
-                    <input
-                        onChange={(e) => setPassword(e.target.value)}
-                        type="password"
-                        placeholder="Password"
-                        className="p-2 rounded-md outline-none bg-gray-200 text-black"
-                    />
-                    <button className="bg-blue-600 text-white font-bold cursor-pointer px-6 py-2">
-                        Login
-                    </button>
-                    {error && (
-                        <div className="bg-red-500 text-white w-fit text-sm py-1 px-3 rounded-md mt-2">
-                            {error}
-                        </div>
-                    )}
-
-                    {/* <Link
-            className="text-sm mt-3 text-right"
-            href={"/dashboard/register"}
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <div>
+            <input
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              placeholder="Email"
+              className="w-full p-2 border rounded-md"
+              required
+            />
+          </div>
+          <div>
+            <input
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              placeholder="Password"
+              className="w-full p-2 border rounded-md"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            disabled={loading}
+            className="bg-blue-600 text-white font-bold px-6 py-2 rounded-md hover:bg-blue-700 transition disabled:opacity-50"
           >
-            Don't have an account? <span className="underline">Register</span>
-          </Link> */}
-                </form>
+            {loading ? "Logging in..." : "Login"}
+          </button>
+
+          {error && (
+            <div className="bg-red-100 text-red-700 p-2 rounded-md text-sm">
+              {error}
             </div>
-        </div>
-    );
+          )}
+
+          <div className="text-sm text-center mt-4">
+            Don't have an account?{" "}
+            <Link href="/register" className="text-blue-600 hover:underline">
+              Register
+            </Link>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 }

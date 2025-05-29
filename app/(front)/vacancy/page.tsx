@@ -1,22 +1,74 @@
-import MainLayout from '@/components/mainLayout'
-import Image from 'next/image'
-import React from 'react'
-import ServiceTop from '../_components/serviceTop'
-import { VacancyTable } from './_components/vacancyTable'
+// app/vacancy/page.tsx
+"use client";
 
+import MainLayout from "@/components/mainLayout";
+import { useEffect, useState } from "react";
+import { VacancyCard } from "./_components/vacancyCard";
+import { VacancyModal } from "./_components/vacancyModal";
 
-function VacancyPage() {
-    return (
-        <MainLayout backImage='web3.jpg' image=''>
-            <div className='p-8'>
-                <p className="text-center text-2xl font-bold">Available vacancies</p>
-                <div className="mt-4">
-                    <VacancyTable />
-                </div>
-            </div>
-
-        </MainLayout>
-    )
+interface Vacancy {
+  _id: string;
+  position: string;
+  status: string;
+  duration: string;
+  imageUrl: string;
+  description?: string;
+  qualifications?: string[];
+  skills?: string[];
+  experience?: string;
 }
 
-export default VacancyPage
+export default function VacancyPage() {
+  const [vacancies, setVacancies] = useState<Vacancy[]>([]);
+  const [selectedVacancy, setSelectedVacancy] = useState<Vacancy | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchVacancies = async () => {
+      try {
+        const response = await fetch("/api/vacancies");
+        const data = await response.json();
+        setVacancies(data);
+      } catch (error) {
+        console.error("Error fetching vacancies:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchVacancies();
+  }, []);
+
+  return (
+    <div>
+      <div className="p-8">
+        <h1 className="text-center text-2xl font-bold mb-8">
+          Available Vacancies
+        </h1>
+
+        {loading ? (
+          <div className="flex justify-center items-center h-64">
+            <p>Loading vacancies...</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {vacancies.map((vacancy) => (
+              <VacancyCard
+                key={vacancy._id}
+                vacancy={vacancy}
+                onClick={() => setSelectedVacancy(vacancy)}
+              />
+            ))}
+          </div>
+        )}
+
+        {selectedVacancy && (
+          <VacancyModal
+            vacancy={selectedVacancy}
+            onClose={() => setSelectedVacancy(null)}
+          />
+        )}
+      </div>
+    </div>
+  );
+}
