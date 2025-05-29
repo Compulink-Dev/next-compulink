@@ -1,7 +1,6 @@
 // app/vacancy/page.tsx
 "use client";
 
-import MainLayout from "@/components/mainLayout";
 import { useEffect, useState } from "react";
 import { VacancyCard } from "./_components/vacancyCard";
 import { VacancyModal } from "./_components/vacancyModal";

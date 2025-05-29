@@ -1,6 +1,4 @@
 "use client";
-import LinkButton from "@/components/linkButton";
-import MainLayout from "@/components/mainLayout";
 import React, { useState } from "react";
 import ContactMap from "./_components/contactMap";
 import emailjs from "emailjs-com";
