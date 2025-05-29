@@ -19,16 +19,26 @@ import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { toast } from "@/components/ui/use-toast";
 
+// app/vacancy/_components/vacancyApplyModal.tsx
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Invalid email address"),
   phone: z.string().min(10, "Phone number must be at least 10 characters"),
   cv: z
-    .instanceof(FileList)
-    .refine((files) => files.length > 0, "CV is required")
+    .any()
+    .refine((files) => files?.length > 0, "CV is required")
     .refine(
-      (files) => files[0].size <= 5 * 1024 * 1024,
+      (files) => files?.[0]?.size <= 5 * 1024 * 1024,
       "Max file size is 5MB"
+    )
+    .refine(
+      (files) =>
+        [
+          "application/pdf",
+          "application/msword",
+          "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        ].includes(files?.[0]?.type),
+      "Only .pdf, .doc, and .docx formats are supported"
     ),
 });
 
