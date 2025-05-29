@@ -40,7 +40,7 @@ export default function VacancyPage() {
 
   return (
     <div>
-      <div className="p-8">
+      <div className="p-8 mt-20">
         <h1 className="text-center text-2xl font-bold mb-8">
           Available Vacancies
         </h1>
